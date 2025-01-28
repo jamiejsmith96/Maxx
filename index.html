@@ -7,622 +7,663 @@
     <title>DeSci DAO Research/Planning</title>
     <style>
         :root {
-            /* --- COLOR PALETTE --- */
-            --primary-color: #0A2463; /* Dark Blue - Professional and Trustworthy */
-            --secondary-color: #3E92CC; /* Lighter Blue - Calming and Tech-focused */
-            --accent-color: #FF6B6B; /* Vibrant Red - Energy, Passion, Innovation (used sparingly) */
-            --background-color: #F5F5F5; /* Light Gray - Clean and Modern */
-            --text-color: #333333; /* Dark Gray - Easy Readability */
-            --heading-font: 'Raleway', sans-serif; /* Modern and Elegant */
-            --body-font: 'Roboto', sans-serif; /* Highly Readable */
-            --link-color: #3E92CC;
-            --hover-color: #0A2463;
+           /* --- COLOR PALETTE --- */
+        --primary-color: #0A2463; /* Dark Blue - Professional and Trustworthy */
+        --secondary-color: #3E92CC; /* Lighter Blue - Calming and Tech-focused */
+        --accent-color: #FF6B6B; /* Vibrant Red - Energy, Passion, Innovation (used sparingly) */
+        --background-color: #F5F5F5; /* Light Gray - Clean and Modern */
+        --text-color: #333333; /* Dark Gray - Easy Readability */
+        --heading-font: 'Raleway', sans-serif; /* Modern and Elegant */
+        --body-font: 'Roboto', sans-serif; /* Highly Readable */
+        --link-color: #3E92CC;
+        --hover-color: #0A2463;
 
-            /* --- OTHER STYLING --- */
-            --border-radius: 10px;
-            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
+        /* --- OTHER STYLING --- */
+        --border-radius: 10px;
+        --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
 
-        body {
-            font-family: var(--body-font);
-            line-height: 1.6;
-            margin: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            padding-top: 2rem;
-            padding-bottom: 4rem;
-        }
+    body {
+        font-family: var(--body-font);
+        line-height: 1.6;
+        margin: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        padding-top: 0rem; /* Reduced padding */
+        padding-bottom: 4rem;
+    }
 
+    /* --- HERO SECTION --- */
+    .hero {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* Animated Gradient */
+        background-size: 200% 200%;
+        animation: gradientAnimation 10s ease infinite;
+        color: white;
+        text-align: center;
+        padding: 4rem 2rem; /* Adjusted padding */
+        margin-bottom: 0rem; /* Reduced margin */
+        position: relative;
+        z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2); /* Dark overlay */
+      z-index: -1;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem; /* Increased font size */
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        color: white;
+        font-family: var(--heading-font);
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: white;
+        font-family: var(--body-font);
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        background: white;
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        animation: fadeInUp 1s ease-out;
+    }
+
+    /* --- HEADINGS --- */
+    h1, h2, h3, h4 {
+        font-family: var(--heading-font);
+        color: var(--primary-color);
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+        animation: slideInLeft 1s ease-out;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        animation: slideInRight 1s ease-out;
+    }
+
+    /* --- NAVIGATION TABS --- */
+    .tab {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        animation: slideInDown 1s ease-out;
+    }
+
+    .tab button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        margin: 0 0.5rem;
+        font-family: var(--heading-font);
+        font-weight: 600;
+        color: var(--primary-color);
+        border-radius: var(--border-radius);
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transition for all states */
+    }
+
+    .tab button:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box-shadow on hover */
+    }
+
+    .tab button.active {
+        background-color: var(--primary-color);
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger box-shadow for active state */
+    }
+
+    .tab button:not(.active) {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* --- TAB CONTENT --- */
+    .tabcontent {
+        animation: fadeIn 0.8s;
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+    }
+
+    .tabcontent:not(#DeSci) {
+      padding: 2rem;
+    }
+
+    #DeSci {
+      padding: 2rem;
+    }
+
+    /* --- TABLE --- */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2rem;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--border-radius);
+        overflow: hidden; /* Ensures rounded corners on the table */
+        animation: fadeInUp 1s ease-out;
+    }
+
+    th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+    }
+
+    /* --- LISTS --- */
+    ul, ol {
+        padding-left: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.8rem;
+    }
+
+    /* --- LINKS --- */
+    a {
+        color: var(--link-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--hover-color);
+        text-decoration: underline;
+    }
+
+    sup a {
+        font-weight: 600;
+    }
+
+    /* --- CITATIONS --- */
+    .citation {
+        background-color: var(--background-color);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        margin-top: 3rem;
+        box-shadow: var(--box-shadow);
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .citation h2, .supplementary h2 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        color: var(--primary-color);
+    }
+
+    .citation-label {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+    }
+
+    .citation-link {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+            /* --- SUPPLEMENTARY --- */
+    .supplementary {
+        background-color: var(--background-color);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        margin-top: 2rem;
+        box-shadow: var(--box-shadow);
+        animation: fadeInUp 1s ease-out;
+    }
+    
+    .supplementary h2 {
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+        color: var(--primary-color);
+    }
+    
+    .supplementary-label {
+        font-size: 0.9rem;
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
+    }
+    
+    .supplementary-link {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    /* --- MAXXDAO SECTION --- */
+    .maxxdao-section h3 {
+        color: var(--secondary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+        animation: slideInRight 1s ease-out;
+    }
+
+    .maxxdao-section p,
+    .maxxdao-section ul,
+    .maxxdao-section ol {
+        margin-bottom: 1rem;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .maxxdao-section ul,
+    .maxxdao-section ol {
+        padding-left: 2rem;
+    }
+
+    .maxxdao-section li {
+        margin-bottom: 0.8rem;
+    }
+
+    .maxxdao-section .highlight {
+        background-color: #FFF5E1; /* Light Orange - Matches Accent Color */
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-weight: 600;
+        animation: pulse 2s infinite ease-in-out;
+    }
+
+    /* --- RESPONSIVE DESIGN --- */
+    @media (max-width: 768px) {
         .container {
-            max-width: 1100px;
-            margin: auto;
-            background: white;
-            padding: 3rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* --- HEADINGS --- */
-        h1, h2, h3, h4 {
-            font-family: var(--heading-font);
-            color: var(--primary-color);
+            padding: 2rem;
         }
 
         h1 {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 1rem;
-            animation: slideInDown 1s ease-out;
+            font-size: 2.5rem;
         }
 
         h2 {
-            font-size: 2.2rem;
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            animation: slideInLeft 1s ease-out;
+            font-size: 2rem;
         }
 
         h3 {
-            font-size: 1.8rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            animation: slideInRight 1s ease-out;
+            font-size: 1.6rem;
         }
 
-        /* --- NAVIGATION TABS --- */
         .tab {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-            animation: slideInDown 1s ease-out;
+            flex-direction: column;
+            align-items: center;
         }
 
         .tab button {
-            background-color: transparent;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 1rem 2rem;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            font-family: var(--heading-font);
-            font-weight: 600;
-            color: var(--primary-color);
-            border-radius: var(--border-radius);
-            font-size: 1.1rem;
+            width: 90%;
+            margin: 0.5rem 0;
         }
 
-        .tab button:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .tab button.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: var(--box-shadow);
-        }
-
-        /* --- TAB CONTENT --- */
-        .tabcontent {
-            display: none;
-            animation: fadeIn 0.8s;
-        }
-
-        /* --- TABLE --- */
         table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            box-shadow: var(--box-shadow);
-            border-radius: var(--border-radius);
-            overflow: hidden; /* Ensures rounded corners on the table */
-            animation: fadeInUp 1s ease-out;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 600;
-        }
-
-        /* --- LISTS --- */
-        ul, ol {
-            padding-left: 2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.8rem;
-        }
-
-        /* --- LINKS --- */
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--hover-color);
-            text-decoration: underline;
-        }
-
-        sup a {
-            font-weight: 600;
-        }
-
-        /* --- CITATIONS --- */
-        .citation {
-            background-color: var(--background-color);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-top: 3rem;
-            box-shadow: var(--box-shadow);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .citation h2, .supplementary h2 {
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            color: var(--primary-color);
-        }
-
-        .citation-label {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .citation-link {
             display: block;
-            margin-bottom: 1rem;
+            overflow-x: auto;
         }
 
-                /* --- SUPPLEMENTARY --- */
-        .supplementary {
-            background-color: var(--background-color);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            margin-top: 2rem;
-            box-shadow: var(--box-shadow);
-            animation: fadeInUp 1s ease-out;
+        #beboHeader {
+            font-size: 6rem; /* Reduced font size for smaller screens */
         }
-        
-        .supplementary h2 {
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+    }
+
+    @media (max-width: 480px) {
+      #beboHeader {
+        font-size: 4rem; /* Further reduced font size for very small screens */
+      }
+    }
+
+    /* --- KEYFRAMES FOR ANIMATIONS --- */
+    @keyframes fadeInUp {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInDown {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes colorChange {
+        0% {
             color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
         }
-        
-        .supplementary-label {
-            font-size: 0.9rem;
-            color: var(--text-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .supplementary-link {
-            display: block;
-            margin-bottom: 1rem;
-        }
-
-        /* --- MAXXDAO SECTION --- */
-        .maxxdao-section h3 {
+        50% {
             color: var(--secondary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            animation: slideInRight 1s ease-out;
+            text-shadow: 0 0 15px var(--secondary-color);
         }
-
-        .maxxdao-section p,
-        .maxxdao-section ul,
-        .maxxdao-section ol {
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
+        100% {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px var(--accent-color);
         }
-
-        .maxxdao-section ul,
-        .maxxdao-section ol {
-            padding-left: 2rem;
+    }
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
         }
-
-        .maxxdao-section li {
-            margin-bottom: 0.8rem;
+        50% {
+            background-position: 100% 50%;
         }
-
-        .maxxdao-section .highlight {
-            background-color: #FFF5E1; /* Light Orange - Matches Accent Color */
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            animation: pulse 2s infinite ease-in-out;
+        100% {
+            background-position: 0% 50%;
         }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            h3 {
-                font-size: 1.6rem;
-            }
-
-            .tab {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tab button {
-                width: 90%;
-                margin: 0.5rem 0;
-            }
-
-            table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-
-        /* --- KEYFRAMES FOR ANIMATIONS --- */
-        @keyframes fadeInUp {
-            from {
-                transform: translateY(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInDown {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                transform: translateX(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                transform: translateX(20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="hero">
+        <h1>DeSci DAO Research & Planning</h1>
+    </div>
     <div class="container">
-        <h1>DeSci DAO Research/Planning</h1>
-
         <div class="tab">
-            <button class="tablinks active" onclick="openTab(event, 'DeSci')">DeSci DAO</button>
-            <button class="tablinks" onclick="openTab(event, 'Maxx')">MaxxDAO</button>
+            <button id="DeSciTab" class="tablinks active" onclick="openTab(event, 'DeSci')">DeSci DAO Research</button>
+            <button id="MaxxTab" class="tablinks" onclick="openTab(event, 'Maxx')">MaxxDAO Overview</button>
+            <button id="IdeasTab" class="tablinks" onclick="openTab(event, 'Ideas')">Ideas</button>
         </div>
 
         <div id="DeSci" class="tabcontent" style="display: block;">
-          <h2>Decentralized Science DAOs: A Technical Deep Dive</h2>
-        
-        <p>Decentralized science (DeSci) is revolutionizing scientific research by leveraging blockchain technology to create a more open, collaborative, and equitable ecosystem<sup><a href="#citation-1">1</a></sup>. DeSci DAOs are a key component of this movement, offering a new way to organize and fund scientific projects<sup><a href="#citation-2">2</a></sup>. This article provides a technical deep dive into DeSci DAOs, exploring their governance mechanisms, tokenomics, and underlying blockchain technologies. It also examines the challenges and limitations of DeSci DAOs and potential future developments.</p>
-    
-        <p>Traditional scientific research often faces challenges such as limited funding opportunities, restricted access to data, and a slow and potentially biased publication process<sup><a href="#citation-3">3</a></sup>. More specifically, issues with traditional academic research include funding and financial barriers, publication and peer review challenges, and data accessibility and transparency issues<sup><a href="#citation-5">5</a></sup>. For example, the "valley of death" in funding for biomedical science describes the point between academic research and clinical development, where even significant findings may become lost if there is no funding for development<sup><a href="#citation-3">3</a></sup>. Additionally, data discoverability between projects can be challenging due to a complex system of data repositories that are cumbersome and require some understanding of copyrights and IP licensing<sup><a href="#citation-3">3</a></sup>. DeSci challenges this status quo by leveraging blockchain technology and decentralized tools to address these issues and create a more efficient and accessible scientific ecosystem<sup><a href="#citation-6">6</a></sup>.</p>
-    
-        <p>DeSci is based on the idea that scientific knowledge should be accessible to everyone and that the process of scientific research should be transparent<sup><a href="#citation-1">1</a></sup>. It aims to address the misalignment of incentives in academic research, emphasizing transparency, rapid funding, and open-source principles<sup><a href="#citation-7">7</a></sup>. By introducing decentralized technologies, DeSci reimagines the way research is conducted, shared, and rewarded<sup><a href="#citation-2">2</a></sup>. DeSci offers a vision where transparency, collaboration, and inclusivity become the norm rather than the exception in scientific research<sup><a href="#citation-2">2</a></sup>.</p>
-    
-        <h2>What are DeSci DAOs?</h2>
-        <p>DeSci DAOs are decentralized autonomous organizations that use blockchain technology to support scientific research. They aim to address the limitations of traditional scientific funding and research models by fostering transparency, collaboration, and accessibility. DeSci DAOs typically have the following characteristics:</p>
-        <ul>
-            <li><strong>Decentralized governance:</strong> DAOs are governed by their members, who typically hold governance tokens that give them voting rights on proposals and initiatives. This ensures that decision-making is distributed and not concentrated in the hands of a few individuals or institutions<sup><a href="#citation-8">8</a></sup>.</li>
-            <li><strong>Transparency:</strong> All transactions and interactions within a DeSci DAO are recorded on a public blockchain, making them transparent and auditable by all members. This fosters trust and accountability within the organization<sup><a href="#citation-8">8</a></sup>.</li>
-            <li><strong>Immutability:</strong> Blockchain technology ensures that once data is recorded, it cannot be altered or deleted, guaranteeing the integrity of scientific data and research findings.</li>
-            <li><strong>Collaboration:</strong> DeSci DAOs facilitate collaboration among scientists from different disciplines and backgrounds by providing a platform for sharing data, resources, and expertise<sup><a href="#citation-2">2</a></sup>.</li>
-            <li><strong>Incentivization:</strong> DeSci DAOs often use tokenized incentive systems to reward participants for their contributions to scientific research. Tokens can be awarded for various activities, including data sharing, collaborations, peer review, and research publication<sup><a href="#citation-9">9</a></sup>.</li>
-        </ul>
-    
-        <p>The emergence of DeSci can be seen as an evolution of the Open Science movement, merging the values of open science with blockchain technology, such as smart contracts, as an algorithmic means to realize open science values such as transparency, scrutiny, critique, and reproducibility<sup><a href="#citation-7">7</a></sup>.</p>
-    
-        <h3>Examples of DeSci DAOs</h3>
-        <table>
-            <tr>
-                <th>DAO Name</th>
-                <th>Focus Area</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>VitaDAO</td>
-                <td>Longevity research</td>
-                <td>Funds and governs research related to extending human lifespan.</td>
-            </tr>
-            <tr>
-                <td>AthenaDAO</td>
-                <td>Women's health research</td>
-                <td>Supports research and development of treatments for women's health issues.</td>
-            </tr>
-            <tr>
-                <td>HairDAO</td>
-                <td>Hair loss research</td>
-                <td>Funds research into the causes and potential treatments for hair loss.</td>
-            </tr>
-        </table>
-    
-        <h2>Blockchain Technologies Used by DeSci DAOs</h2>
-        <p>DeSci DAOs can be built on various blockchain platforms, each with its own technical characteristics and trade-offs. The choice of blockchain technology depends on the specific needs and requirements of the DeSci DAO, such as the type of data being stored, the frequency of transactions, and the desired level of security and scalability<sup><a href="#citation-13">13</a></sup>. Here are some of the commonly used blockchain technologies:</p>
-        
-        <h3>Layer-1 Platforms:</h3>
-        <ul>
-            <li><strong>Ethereum:</strong> Ethereum is a popular choice for DeSci DAOs due to its mature ecosystem, strong developer community, and support for smart contracts. However, Ethereum can suffer from high transaction fees and scalability issues, which can be a concern for DeSci DAOs that require high throughput<sup><a href="#citation-2">2</a></sup>.</li>
-            <li><strong>Arweave:</strong> Arweave is a blockchain-like structure that focuses on permanent storage, making it suitable for archiving scientific data and ensuring its long-term availability<sup><a href="#citation-14">14</a></sup>.</li>
-        </ul>
-    
-        <h3>Layer-2 Solutions:</h3>
-        <ul>
-            <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-4">4</a></sup>.</li>
-        </ul>
-    
-        <h3>Decentralized Storage Systems:</h3>
-        <ul>
-            <li><strong>IPFS:</strong> The InterPlanetary File System (IPFS) is a peer-to-peer distributed file system that can be used to store and share scientific data in a decentralized manner<sup><a href="#citation-14">14</a></sup>.</li>
-        </ul>
-    
-        <h3>Other Blockchain Platforms:</h3>
-        <ul>
-            <li><strong>OriginTrail (TRAC):</strong> A decentralized knowledge graph used for applications like supply chain tracing and data verification<sup><a href="#citation-13">13</a></sup>.</li>
-            <li><strong>Hippocrat (HPO):</strong> Aims to create a decentralized patient network, focusing on patient data management and community engagement<sup><a href="#citation-13">13</a></sup>.</li>
-            <li><strong>Dynex (DNX):</strong> A platform for decentralized clinical trials and data management<sup><a href="#citation-13">13</a></sup>.</li>
-            <li><strong>ResearchCoin (RSC):</strong> A token used to incentivize contributions to scientific research on the ResearchHub platform<sup><a href="#citation-13">13</a></sup>.</li>
-        </ul>
-
-    <h2>Governance Mechanisms and Tokenomics</h2>
-    <p>DeSci DAOs employ various governance mechanisms to ensure fair and transparent decision-making. These mechanisms aim to distribute power among stakeholders and prevent concentration of control<sup><a href="#citation-8">8</a></sup>. Some common mechanisms include:</p>
-
-    <h3>Governance Mechanisms:</h3>
-    <ul>
-        <li><strong>Token-based voting:</strong> Members with governance tokens can vote on proposals and initiatives, with the weight of their vote often proportional to the number of tokens they hold<sup><a href="#citation-8">8</a></sup>.</li>
-        <li><strong>Quadratic voting:</strong> Quadratic voting aims to give more weight to smaller stakeholders by allowing them to allocate more voting power to proposals they care about. This helps to prevent dominance by large token holders and promotes a more democratic decision-making process<sup><a href="#citation-1">1</a></sup>.</li>
-        <li><strong>Reputation systems:</strong> Some DeSci DAOs use reputation systems to give more weight to members who have made significant contributions to the organization. This can incentivize active participation and reward valuable contributions<sup><a href="#citation-2">2</a></sup>.</li>
-    </ul>
-
-    <h3>Tokenomics:</h3>
-    <p>Tokenomics plays a crucial role in the functioning of DeSci DAOs. Tokens can be used for various purposes, including:</p>
-    <ul>
-        <li><strong>Governance:</strong> Governance tokens give holders voting rights in the DAO, allowing them to participate in decision-making processes<sup><a href="#citation-8">8</a></sup>.</li>
-        <li><strong>Incentivization:</strong> Tokens can be used to reward contributors for their participation in research, peer review, and other activities. This can motivate researchers to share data, collaborate on projects, and contribute to the overall development of the DeSci ecosystem<sup><a href="#citation-9">9</a></sup>.</li>
-        <li><strong>Funding:</strong> Tokens can be used to raise funds for research projects through token sales or crowdfunding. This can provide an alternative funding mechanism for projects that may not be able to secure traditional funding<sup><a href="#citation-17">17</a></sup>.</li>
-        <li><strong>Access to resources:</strong> Tokens can be used to grant access to research data, publications, or other resources within the DeSci DAO. This can create a tokenized economy within the DAO, where tokens are used to access valuable resources and services<sup><a href="#citation-17">17</a></sup>.</li>
-    </ul>
-
-    <p>The design of the tokenomics model is crucial for the sustainability and success of the DeSci DAO. It should incentivize participation, ensure fair distribution of rewards, and align the interests of all stakeholders<sup><a href="#citation-9">9</a></sup>.</p>
-
-    <h3>Types of DeSci DAOs:</h3>
-    <ul>
-        <li><strong>Governance-token DAOs:</strong> These DAOs issue tokens that represent voting rights and allow holders to participate in governance decisions<sup><a href="#citation-8">8</a></sup>.</li>
-        <li><strong>Share-based DAOs:</strong> These DAOs issue tokens that represent shares in the DAO and grant holders ownership rights and voting power<sup><a href="#citation-8">8</a></sup>.</li>
-    </ul>
-
-    <h2>IP-NFTs in DeSci</h2>
-    <p>IP-NFTs (Intellectual Property Non-Fungible Tokens) are a crucial aspect of DeSci DAOs. They are used to represent and manage intellectual property rights in a decentralized manner<sup><a href="#citation-14">14</a></sup>. IP-NFTs can be used to tokenize research data, patents, and copyrights, allowing researchers to maintain ownership of their intellectual property, receive fair recognition for their work, and even monetize their findings in new ways<sup><a href="#citation-9">9</a></sup>.</p>
-
-    <p>Here are some of the ways IP-NFTs are used in DeSci:</p>
-    <ul>
-        <li><strong>Representing ownership:</strong> IP-NFTs can act as digital certificates for research outputs, such as datasets or publications, providing verifiable proof of ownership<sup><a href="#citation-14">14</a></sup>.</li>
-        <li><strong>Facilitating funding:</strong> IP-NFTs can enable fractional ownership, allowing stakeholders to invest in projects and share in the potential returns<sup><a href="#citation-14">14</a></sup>.</li>
-        <li><strong>Incentivizing research:</strong> IP-NFTs can be used to reward researchers for their contributions and incentivize further research and development<sup><a href="#citation-9">9</a></sup>.</li>
-    </ul>
-
-    <h2>How to Get Funding from a DeSci DAO</h2>
-    <p>Most DeSci DAOs issue tokens that represent voting rights or partial ownership of the underlying organization and governance rights. This means that DeSci DAOs' token holders typically decide who and what to fund<sup><a href="#citation-18">18</a></sup>. Here's a general process for getting research funded by a DeSci DAO:</p>
-
-    <ol>
-        <li><strong>Identify a suitable DeSci DAO:</strong> Research different DeSci DAOs and their focus areas to find one that aligns with your research project.</li>
-        <li><strong>Prepare your proposal:</strong> Write a clear and concise proposal that outlines your research project, its objectives, methodology, and potential impact.</li>
-        <li><strong>Submit your proposal:</strong> Follow the DeSci DAO's guidelines for submitting proposals, which may involve filling out a form or creating a presentation.</li>
-        <li><strong>Wait for the review, vote, and results:</strong> Once submitted, your proposal will be reviewed by the DAO's community, which may involve expert reviews, community discussions, and a voting process.</li>
-    </ol>
-
-    <h2>Benefits of DeSci DAOs</h2>
-    <p>DeSci DAOs offer several potential benefits for scientific research:</p>
-    <ul>
-        <li><strong>Increased funding opportunities:</strong> DeSci DAOs can provide alternative funding sources for research projects, particularly those that may not be able to secure traditional funding<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Enhanced collaboration:</strong> DeSci DAOs can facilitate global collaboration among researchers by providing a platform for sharing data, resources, and expertise<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Improved data accessibility and transparency:</strong> DeSci DAOs can use blockchain technology to create open data repositories that allow researchers to share and access data more easily<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Fairer recognition and reward systems:</strong> DeSci DAOs can use tokenized incentive systems to ensure that researchers are fairly recognized and rewarded for their contributions<sup><a href="#citation-9">9</a></sup>.</li>
-        <li><strong>Greater control over intellectual property:</strong> DeSci DAOs can use IP-NFTs to give researchers more control over their intellectual property and enable new ways to monetize their findings<sup><a href="#citation-9">9</a></sup>.</li>
-    </ul>
-
-    <h2>Challenges and Limitations of DeSci DAOs</h2>
-    <p>While DeSci DAOs offer significant potential, they also face several challenges and limitations:</p>
-    <ul>
-        <li><strong>Scalability:</strong> Blockchain technology can be limited in its ability to handle a large number of transactions, which can be a challenge for DeSci DAOs that need to process a high volume of data or interactions<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Resistance from centralized institutions:</strong> Traditional scientific institutions may resist the shift to decentralized systems, as they may perceive DeSci DAOs as a threat to their established power and funding models<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Data security and privacy:</strong> Decentralized storage solutions raise concerns about data security and privacy, especially for sensitive research data<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Quality control:</strong> Ensuring the quality and integrity of research data and publications in a decentralized environment can be challenging<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Regulatory uncertainty:</strong> The legal and regulatory landscape for DAOs is still evolving, which can create uncertainty for DeSci DAOs operating in different jurisdictions<sup><a href="#citation-9">9</a></sup>.</li>
-        <li><strong>Governance challenges:</strong> Designing effective governance models for DeSci DAOs can be complex, as it requires balancing the interests of diverse stakeholders and preventing power imbalances. The pseudonymity of DAO members further complicates accountability by limiting the transparency of individual contributions and enforcing collective goals<sup><a href="#citation-9">9</a></sup>.</li>
-    </ul>
-
-    <h2>Potential Future Developments and Trends</h2>
-    <p>Despite these challenges, DeSci DAOs are a rapidly evolving field with significant potential for future development. Some potential trends include:</p>
-    <ul>
-        <li><strong>Increased adoption of DeSci platforms:</strong> As DeSci platforms mature and become more user-friendly, we can expect to see wider adoption by researchers and institutions.</li>
-        <li><strong>Integration of AI and machine learning:</strong> DeSci DAOs can leverage AI and machine learning to analyze large datasets, accelerate discoveries, and improve research efficiency<sup><a href="#citation-2">2</a></sup>.</li>
-        <li><strong>Development of new governance models:</strong> More sophisticated and inclusive governance models will emerge to address the challenges of decentralized decision-making in DeSci DAOs.</li>
-        <li><strong>Interoperability between DeSci platforms:</strong> Increased interoperability between different DeSci platforms will enable seamless data sharing and collaboration across the DeSci ecosystem.</li>
-        <li><strong>Tokenization of intellectual property:</strong> IP-NFTs will become more widely used to represent and manage intellectual property rights in a decentralized manner<sup><a href="#citation-14">14</a></sup>.</li>
-    </ul>
-
-    <h2>Conclusion</h2>
-    <p>DeSci DAOs offer a promising new way to organize and fund scientific research. By leveraging blockchain technology, they can foster transparency, collaboration, and accessibility in science. While challenges remain, the potential benefits of DeSci DAOs are significant, and we can expect to see continued innovation and development in this field.</p>
-
-    <p>When designing my own DeSci DAO, it is crucial to consider the technical aspects discussed in this article, including the choice of blockchain technology, governance mechanisms, and tokenomics model. For example, the scalability issues associated with Ethereum may lead me to consider alternative platforms like Polygon or Arweave. Additionally, the governance challenges highlighted in the research emphasize the need for a carefully designed governance model that balances the interests of diverse stakeholders and ensures accountability. The insights on IP-NFTs and tokenized incentive systems will also inform the design of my DAO's tokenomics model to incentivize participation and ensure the sustainability of the organization. Addressing the challenges and limitations of DeSci DAOs will be essential for their long-term success and sustainability.</p>
-
-    <div class="citation">
-        <h2>Works Cited</h2>
-        <ol>
-            <li id="citation-1">
-                <div class="citation-label">Coinbase - News Article</div>
-                <a class="citation-link" href="https://www.coinbase.com/learn/crypto-glossary/what-is-decentralized-science-desci-and-how-does-it-plan-to-fix-academic-research">What is decentralized science (Desci) and how does it plan to fix academic research?</a>
-            </li>
-            <li id="citation-2">
-                <div class="citation-label">Ulam Labs - Blog</div>
-                <a class="citation-link" href="https://www.ulam.io/blog/how-decentralized-science-is-revolutionizing-research">How Decentralized Science (DeSci) Improves Research - Ulam Labs</a>
-            </li>
-            <li id="citation-3">
-                <div class="citation-label">Bitstamp - Educational Article</div>
-                <a class="citation-link" href="https://www.bitstamp.net/learn/blockchain/what-is-decentralized-science-desci-the-future-of-scientific-research-on-the-blockchain/">What Is Decentralized Science (DeSci)? The Future of Scientific...</a>
-            </li>
-            <li id="citation-4">
-                <div class="citation-label">CoinGecko - Educational Article</div>
-                <a class="citation-link" href="https://www.coingecko.com/learn/what-is-desci-decentralized-science">What Is Decentralized Science (DeSci) and How Can It Change the Scientific Field?</a>
-            </li>
-            <li id="citation-5">
-                <div class="citation-label">Zeeve - Blog</div>
-                <a class="citation-link" href="https://www.zeeve.io/blog/how-decentralized-sciencedesci-cures-the-common-ails-of-academic-research/">How Decentralized Science(DeSci) Cures the Common Ails of...</a>
-            </li>
-            <li id="citation-6">
-                <div class="citation-label">TokenMinds - Blog</div>
-                <a class="citation-link" href="https://tokenminds.co/blog/knowledge-base/decentralized-science">Decentralized Science (DeSci): A Paradigm Shift in Scientific Exploration - TokenMinds</a>
-            </li>
-            <li id="citation-7">
-                <div class="citation-label">Frontiers - Journal Article</div>
-                <a class="citation-link" href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2024.1353272/full">Advancing longevity research through decentralized... - Frontiers</a>
-            </li>
-            <li id="citation-8">
-                <div class="citation-label">Gemini - Educational Article</div>
-                <a class="citation-link" href="https://www.gemini.com/cryptopedia/dao-crypto-decentralized-governance-blockchain-governance">What Is a DAO's Role in Decentralized Governance? | Gemini</a>
-            </li>
-            <li id="citation-9">
-                <div class="citation-label">Hacken - Blog</div>
-                <a class="citation-link" href="https://hacken.io/discover/decentralized-science-desci/">What Is Decentralized Science (DeSci)? - Hacken</a>
-            </li>
-            <li id="citation-10">
-                <div class="citation-label">Frontiers - Journal Article</div>
-                <a class="citation-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a>
-            </li>
-            <li id="citation-11">
-                <div class="citation-label">arXiv - Preprint</div>
-                <a class="citation-link" href="https://arxiv.org/html/2409.01823v1">DAOs of Collective Intelligence? Unraveling the Complexity of Blockchain Governance in Decentralized Autonomous Organizations - arXiv</a>
-            </li>
-            <li id="citation-12">
-                <div class="citation-label">SciELO - Journal Article</div>
-                <a class="citation-link" href="https://www.scielo.br/j/bar/a/nqdm7FjmhVTyg9bV4WPJLcC/?format=pdf&lang=en">Decentralized Autonomous Organizations (DAOs): Field of Research and Avenues for Future Studies - SciELO</a>
-            </li>
-            <li id="citation-13">
-                <div class="citation-label">Blockchain App Factory - Solutions</div>
-                <a class="citation-link" href="https://www.blockchainappfactory.com/desci-solutions">Decentralized Science(DeSci) Solutions | Launch Your DeSci Startup</a>
-            </li>
-            <li id="citation-14">
-                <div class="citation-label">CCN - Educational Article</div>
-                <a class="citation-link" href="https://www.ccn.com/education/crypto/decentralized-science-desci-explained/">Decentralized Science (DeSci): Research Revolution & Blockchain - CCN.com</a>
-            </li>
-            <li id="citation-15">
-                <div class="citation-label">Blaize Tech - Blog</div>
-                <a class="citation-link" href="https://blaize.tech/blog/what-is-desci/">What is DeSci: The Revolution of Decentralized Science - Blaize Tech</a>
-            </li>
-            <li id="citation-16">
-                <div class="citation-label">Binance Square - Post</div>
-                <a class="citation-link" href="https://www.binance.com/en/square/post/17462558900577">DeSci: Revolutionizing Science Through Blockchain | BlockchainBaller on Binance Square</a>
-            </li>
-            <li id="citation-17">
-                <div class="citation-label">The Coin Bureau - Analysis</div>
-                <a class="citation-link" href="https://coinbureau.com/analysis/top-desci-projects/">Top DeSci Projects Revolutionizing Scientific Research in 2025 - The Coin Bureau</a>
-            </li>
-            <li id="citation-18">
-                <div class="citation-label">ResearchHub Foundation - Blog</div>
-                <a class="citation-link" href="https://blog.researchhub.foundation/the-4-steps-to-get-your-research-funded-by-a-desci-dao-a-step-by-step-guide/">How to Get Your Research Funded by A DeSci DAO: A Step-by-Step Guide.</a>
-            </li>
-            <li id="citation-19">
-                <div class="citation-label">Frontiers - Journal Article</div>
-                <a class="citation-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a>
-            </li>
-        </ol>
-    </div>
-    <div class="supplementary">
-        <h2>Supplementary References</h2>
-        <ol start="20">
-            <li>
-                <div class="supplementary-label">ScienceDirect - Journal Article</div>
-                <a class="supplementary-link" href="https://www.sciencedirect.com/science/article/abs/pii/S096386872300133X">A decentralized autonomous organization (DAO) based framework for biomedical research and innovation</a>
-                <div class="supplementary-label">Cited By:</div>
-                <ul>
-                    <li><a class="supplementary-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a></li>
-                </ul>
-            </li>
-            <li>
-                <div class="supplementary-label">Zenodo - Preprint</div>
-                <a class="supplementary-link" href="https://zenodo.org/records/10799462">Decentralized Science (DeSci) Movement: transforming science by making knowledge a public good through blockchain.</a>
-                <div class="supplementary-label">Cited By:</div>
-                <ul>
-                    <li><a class="supplementary-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a></li>
-                </ul>
-            </li>
-        </ol>
-    </div>
-        </div>
-        
+            <h2>Decentralized Science DAOs: A Technical Deep Dive</h2>
+            <p>Decentralized science (DeSci) is revolutionizing scientific research by leveraging blockchain technology to create a more open, collaborative, and equitable ecosystem<sup><a href="#citation-1">1</a></sup>. DeSci DAOs are a key component of this movement, offering a new way to organize and fund scientific projects<sup><a href="#citation-2">2</a></sup>. This article provides a technical deep dive into DeSci DAOs, exploring their governance mechanisms, tokenomics, and underlying blockchain technologies. It also examines the challenges and limitations of DeSci DAOs and potential future developments.</p>
+            <p>Traditional scientific research often faces challenges such as limited funding opportunities, restricted access to data, and a slow and potentially biased publication process<sup><a href="#citation-3">3</a></sup>. More specifically, issues with traditional academic research include funding and financial barriers, publication and peer review challenges, and data accessibility and transparency issues<sup><a href="#citation-4">4</a></sup>. For example, the "valley of death" in funding for biomedical science describes the point between academic research and clinical development, where even significant findings may become lost if there is no funding for development<sup><a href="#citation-3">3</a></sup>. Additionally, data discoverability between projects can be challenging due to a complex system of data repositories that are cumbersome and require some understanding of copyrights and IP licensing<sup><a href="#citation-3">3</a></sup>. DeSci challenges this status quo by leveraging blockchain technology and decentralized tools to address these issues and create a more efficient and accessible scientific ecosystem<sup><a href="#citation-5">5</a></sup>.</p>
+            <p>DeSci is based on the idea that scientific knowledge should be accessible to everyone and that the process of scientific research should be transparent<sup><a href="#citation-1">1</a></sup>. It aims to address the misalignment of incentives in academic research, emphasizing transparency, rapid funding, and open-source principles<sup><a href="#citation-6">6</a></sup>. By introducing decentralized technologies, DeSci reimagines the way research is conducted, shared, and rewarded<sup><a href="#citation-2">2</a></sup>. DeSci offers a vision where transparency, collaboration, and inclusivity become the norm rather than the exception in scientific research<sup><a href="#citation-2">2</a></sup>.</p>
+            <h2>What are DeSci DAOs?</h2>
+            <img src="https://www.ulam.io/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F6m1h7n1y%2Fproduction%2F9f57554a5e97d8f725b85b7d2d9e29a224d9f772-1920x1080.png&w=3840&q=75" alt="DeSci DAO Image" style="width: 100%; margin-top: 2rem; margin-bottom: 2rem; border-radius: var(--border-radius);">
+            <p>DeSci DAOs are decentralized autonomous organizations that use blockchain technology to support scientific research. They aim to address the limitations of traditional scientific funding and research models by fostering transparency, collaboration, and accessibility. DeSci DAOs typically have the following characteristics:</p>
+            <ul>
+                <li><strong>Decentralized governance:</strong> DAOs are governed by their members, who typically hold governance tokens that give them voting rights on proposals and initiatives. This ensures that decision-making is distributed and not concentrated in the hands of a few individuals or institutions<sup><a href="#citation-7">7</a></sup>.</li>
+                <li><strong>Transparency:</strong> All transactions and interactions within a DeSci DAO are recorded on a public blockchain, making them transparent and auditable by all members. This fosters trust and accountability within the organization<sup><a href="#citation-7">7</a></sup>.</li>
+                <li><strong>Immutability:</strong> Blockchain technology ensures that once data is recorded, it cannot be altered or deleted, guaranteeing the integrity of scientific data and research findings.</li>
+                <li><strong>Collaboration:</strong> DeSci DAOs facilitate collaboration among scientists from different disciplines and backgrounds by providing a platform for sharing data, resources, and expertise<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Incentivization:</strong> DeSci DAOs often use tokenized incentive systems to reward participants for their contributions to scientific research. Tokens can be awarded for various activities, including data sharing, collaborations, peer review, and research publication<sup><a href="#citation-8">8</a></sup>.</li>
+            </ul>
+            <p>The emergence of DeSci can be seen as an evolution of the Open Science movement, merging the values of open science with blockchain technology, such as smart contracts, as an algorithmic means to realize open science values such as transparency, scrutiny, critique, and reproducibility<sup><a href="#citation-6">6</a></sup>.</p>
+            
+            <h3>Examples of DeSci DAOs</h3>
+            <table>
+                <tr>
+                    <th>DAO Name</th>
+                    <th>Focus Area</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>VitaDAO</td>
+                    <td>Longevity research</td>
+                    <td>Funds and governs research related to extending human lifespan.</td>
+                </tr>
+                <tr>
+                    <td>AthenaDAO</td>
+                    <td>Women's health research</td>
+                    <td>Supports research and development of treatments for women's health issues.</td>
+                </tr>
+                <tr>
+                    <td>HairDAO</td>
+                    <td>Hair loss research</td>
+                    <td>Funds research into the causes and potential treatments for hair loss.</td>
+                </tr>
+            </table>
+            <h2>Blockchain Technologies Used by DeSci DAOs</h2>
+            <p>DeSci DAOs can be built on various blockchain platforms, each with its own technical characteristics and trade-offs. The choice of blockchain technology depends on the specific needs and requirements of the DeSci DAO, such as the type of data being stored, the frequency of transactions, and the desired level of security and scalability<sup><a href="#citation-9">9</a></sup>. Here are some of the commonly used blockchain technologies:</p>
+            
+            <h3>Layer-1 Platforms:</h3>
+            <ul>
+                <li><strong>Ethereum:</strong> Ethereum is a popular choice for DeSci DAOs due to its mature ecosystem, strong developer community, and support for smart contracts. However, Ethereum can suffer from high transaction fees and scalability issues, which can be a concern for DeSci DAOs that require high throughput<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Arweave:</strong> Arweave is a blockchain-like structure that focuses on permanent storage, making it suitable for archiving scientific data and ensuring its long-term availability<sup><a href="#citation-10">10</a></sup>.</li>
+            </ul>
+            
+            <h3>Layer-2 Solutions:</h3>
+            <ul>
+                <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-12">12</a></sup>.</li>
+            </ul>
+            
+            <h3>Decentralized Storage Systems:</h3>
+            <ul>
+                <li><strong>IPFS:</strong> The InterPlanetary File System (IPFS) is a peer-to-peer distributed file system that can be used to store and share scientific data in a decentralized manner<sup><a href="#citation-10">10</a></sup>.</li>
+            </ul>
+            
+            <h3>Other Blockchain Platforms:</h3>
+            <ul>
+                <li><strong>OriginTrail (TRAC):</strong> A decentralized knowledge graph used for applications like supply chain tracing and data verification<sup><a href="#citation-9">9</a></sup>.</li>
+                <li><strong>Hippocrat (HPO):</strong> Aims to create a decentralized patient network, focusing on patient data management and community engagement<sup><a href="#citation-9">9</a></sup>.</li>
+                <li><strong>Dynex (DNX):</strong> A platform for decentralized clinical trials and data management<sup><a href="#citation-9">9</a></sup>.</li>
+                <li><strong>ResearchCoin (RSC):</strong> A token used to incentivize contributions to scientific research on the ResearchHub platform<sup><a href="#citation-9">9</a></sup>.</li>
+            </ul>
+            <h2>Governance Mechanisms and Tokenomics</h2>
+            <p>DeSci DAOs employ various governance mechanisms to ensure fair and transparent decision-making. These mechanisms aim to distribute power among stakeholders and prevent concentration of control<sup><a href="#citation-7">7</a></sup>. Some common mechanisms include:</p>
+            <h3>Governance Mechanisms:</h3>
+            <ul>
+                <li><strong>Token-based voting:</strong> Members with governance tokens can vote on proposals and initiatives, with the weight of their vote often proportional to the number of tokens they hold<sup><a href="#citation-7">7</a></sup>.</li>
+                <li><strong>Quadratic voting:</strong> Quadratic voting aims to give more weight to smaller stakeholders by allowing them to allocate more voting power to proposals they care about. This helps to prevent dominance by large token holders and promotes a more democratic decision-making process<sup><a href="#citation-1">1</a></sup>.</li>
+                <li><strong>Reputation systems:</strong> Some DeSci DAOs use reputation systems to give more weight to members who have made significant contributions to the organization. This can incentivize active participation and reward valuable contributions<sup><a href="#citation-2">2</a></sup>.</li>
+            </ul>
+            <h3>Tokenomics:</h3>
+            <p>Tokenomics plays a crucial role in the functioning of DeSci DAOs. Tokens can be used for various purposes, including:</p>
+            <ul>
+                <li><strong>Governance:</strong> Governance tokens give holders voting rights in the DAO, allowing them to participate in decision-making processes<sup><a href="#citation-7">7</a></sup>.</li>
+                <li><strong>Incentivization:</strong> Tokens can be used to reward contributors for their participation in research, peer review, and other activities. This can motivate researchers to share data, collaborate on projects, and contribute to the overall development of the DeSci ecosystem<sup><a href="#citation-8">8</a></sup>.</li>
+                <li><strong>Funding:</strong> Tokens can be used to raise funds for research projects through token sales or crowdfunding. This can provide an alternative funding mechanism for projects that may not be able to secure traditional funding<sup><a href="#citation-11">11</a></sup>.</li>
+                <li><strong>Access to resources:</strong> Tokens can be used to grant access to research data, publications, or other resources within the DeSci DAO. This can create a tokenized economy within the DAO, where tokens are used to access valuable resources and services<sup><a href="#citation-11">11</a></sup>.</li>
+            </ul>
+            <p>The design of the tokenomics model is crucial for the sustainability and success of the DeSci DAO. It should incentivize participation, ensure fair distribution of rewards, and align the interests of all stakeholders<sup><a href="#citation-8">8</a></sup>.</p>
+            <h3>Types of DeSci DAOs:</h3>
+            <ul>
+                <li><strong>Governance-token DAOs:</strong> These DAOs issue tokens that represent voting rights and allow holders to participate in governance decisions<sup><a href="#citation-7">7</a></sup>.</li>
+                <li><strong>Share-based DAOs:</strong> These DAOs issue tokens that represent shares in the DAO and grant holders ownership rights and voting power<sup><a href="#citation-7">7</a></sup>.</li>
+            </ul>
+            <h2>IP-NFTs in DeSci</h2>
+            <p>IP-NFTs (Intellectual Property Non-Fungible Tokens) are a crucial aspect of DeSci DAOs. They are used to represent and manage intellectual property rights in a decentralized manner<sup><a href="#citation-10">10</a></sup>. IP-NFTs can be used to tokenize research data, patents, and copyrights, allowing researchers to maintain ownership of their intellectual property, receive fair recognition for their work, and even monetize their findings in new ways<sup><a href="#citation-8">8</a></sup>.</p>
+            <p>Here are some of the ways IP-NFTs are used in DeSci:</p>
+            <ul>
+                <li><strong>Representing ownership:</strong> IP-NFTs can act as digital certificates for research outputs, such as datasets or publications, providing verifiable proof of ownership<sup><a href="#citation-10">10</a></sup>.</li>
+                <li><strong>Facilitating funding:</strong> IP-NFTs can enable fractional ownership, allowing stakeholders to invest in projects and share in the potential returns<sup><a href="#citation-10">10</a></sup>.</li>
+                <li><strong>Incentivizing research:</strong> IP-NFTs can be used to reward researchers for their contributions and incentivize further research and development<sup><a href="#citation-8">8</a></sup>.</li>
+            </ul>
+            <h2>How to Get Funding from a DeSci DAO</h2>
+            <p>Most DeSci DAOs issue tokens that represent voting rights or partial ownership of the underlying organization and governance rights. This means that DeSci DAOs' token holders typically decide who and what to fund<sup><a href="#citation-12">12</a></sup>. Here's a general process for getting research funded by a DeSci DAO:</p>
+            <ol>
+                <li><strong>Identify a suitable DeSci DAO:</strong> Research different DeSci DAOs and their focus areas to find one that aligns with your research project.</li>
+                <li><strong>Prepare your proposal:</strong> Write a clear and concise proposal that outlines your research project, its objectives, methodology, and potential impact.</li>
+                <li><strong>Submit your proposal:</strong> Follow the DeSci DAO's guidelines for submitting proposals, which may involve filling out a form or creating a presentation.</li>
+                <li><strong>Wait for the review, vote, and results:</strong> Once submitted, your proposal will be reviewed by the DAO's community, which may involve expert reviews, community discussions, and a voting process.</li>
+            </ol>
+            <h2>Benefits of DeSci DAOs</h2>
+            <p>DeSci DAOs offer several potential benefits for scientific research:</p>
+            <ul>
+                <li><strong>Increased funding opportunities:</strong> DeSci DAOs can provide alternative funding sources for research projects, particularly those that may not be able to secure traditional funding<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Enhanced collaboration:</strong> DeSci DAOs can facilitate global collaboration among researchers by providing a platform for sharing data, resources, and expertise<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Improved data accessibility and transparency:</strong> DeSci DAOs can use blockchain technology to create open data repositories that allow researchers to share and access data more easily<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Fairer recognition and reward systems:</strong> DeSci DAOs can use tokenized incentive systems to ensure that researchers are fairly recognized and rewarded for their contributions<sup><a href="#citation-8">8</a></sup>.</li>
+                <li><strong>Greater control over intellectual property:</strong> DeSci DAOs can use IP-NFTs to give researchers more control over their intellectual property and enable new ways to monetize their findings<sup><a href="#citation-8">8</a></sup>.</li>
+            </ul>
+            <h2>Challenges and Limitations of DeSci DAOs</h2>
+            <p>While DeSci DAOs offer significant potential, they also face several challenges and limitations:</p>
+            <ul>
+                <li><strong>Scalability:</strong> Blockchain technology can be limited in its ability to handle a large number of transactions, which can be a challenge for DeSci DAOs that need to process a high volume of data or interactions<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Resistance from centralized institutions:</strong> Traditional scientific institutions may resist the shift to decentralized systems, as they may perceive DeSci DAOs as a threat to their established power and funding models<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Data security and privacy:</strong> Decentralized storage solutions raise concerns about data security and privacy, especially for sensitive research data<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Quality control:</strong> Ensuring the quality and integrity of research data and publications in a decentralized environment can be challenging<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Regulatory uncertainty:</strong> The legal and regulatory landscape for DAOs is still evolving, which can create uncertainty for DeSci DAOs operating in different jurisdictions<sup><a href="#citation-8">8</a></sup>.</li>
+                <li><strong>Governance challenges:</strong> Designing effective governance models for DeSci DAOs can be complex, as it requires balancing the interests of diverse stakeholders and preventing power imbalances. The pseudonymity of DAO members further complicates accountability by limiting the transparency of individual contributions and enforcing collective goals<sup><a href="#citation-8">8</a></sup>.</li>
+            </ul>
+            <h2>Potential Future Developments and Trends</h2>
+            <p>Despite these challenges, DeSci DAOs are a rapidly evolving field with significant potential for future development. Some potential trends include:</p>
+            <ul>
+                <li><strong>Increased adoption of DeSci platforms:</strong> As DeSci platforms mature and become more user-friendly, we can expect to see wider adoption by researchers and institutions.</li>
+                <li><strong>Integration of AI and machine learning:</strong> DeSci DAOs can leverage AI and machine learning to analyze large datasets, accelerate discoveries, and improve research efficiency<sup><a href="#citation-2">2</a></sup>.</li>
+                <li><strong>Development of new governance models:</strong> More sophisticated and inclusive governance models will emerge to address the challenges of decentralized decision-making in DeSci DAOs.</li>
+                <li><strong>Interoperability between DeSci platforms:</strong> Increased interoperability between different DeSci platforms will enable seamless data sharing and collaboration across the DeSci ecosystem.</li>
+                <li><strong>Tokenization of intellectual property:</strong> IP-NFTs will become more widely used to represent and manage intellectual property rights in a decentralized manner<sup><a href="#citation-10">10</a></sup>.</li>
+            </ul>
+            <h2>Conclusion</h2>
+            <p>DeSci DAOs offer a promising new way to organize and fund scientific research. By leveraging blockchain technology, they can foster transparency, collaboration, and accessibility in science. While challenges remain, the potential benefits of DeSci DAOs are significant, and we can expect to see continued innovation and development in this field.</p>
+            <p>When designing my own DeSci DAO, it is crucial to consider the technical aspects discussed in this article, including the choice of blockchain technology, governance mechanisms, and tokenomics model. For example, the scalability issues associated with Ethereum may lead me to consider alternative platforms like Polygon or Arweave. Additionally, the governance challenges highlighted in the research emphasize the need for a carefully designed governance model that balances the interests of diverse stakeholders and ensures accountability. The insights on IP-NFTs and tokenized incentive systems will also inform the design of my DAO's tokenomics model to incentivize participation and ensure the sustainability of the organization. Addressing the challenges and limitations of DeSci DAOs will be essential for their long-term success and sustainability.</p>
+            
+            <div class="citation">
+                <h2>Works Cited</h2>
+                <ol>
+                    <li id="citation-1">
+                        <div class="citation-label">Coinbase - News Article</div>
+                        <a class="citation-link" href="https://www.coinbase.com/learn/crypto-glossary/what-is-decentralized-science-desci-and-how-does-it-plan-to-fix-academic-research">What is decentralized science (Desci) and how does it plan to fix academic research?</a>
+                    </li>
+                    <li id="citation-2">
+                        <div class="citation-label">Ulam Labs - Blog</div>
+                        <a class="citation-link" href="https://www.ulam.io/blog/how-decentralized-science-is-revolutionizing-research">How Decentralized Science (DeSci) Improves Research - Ulam Labs</a>
+                    </li>
+                    <li id="citation-3">
+                        <div class="citation-label">Bitstamp - Educational Article</div>
+                        <a class="citation-link" href="https://www.bitstamp.net/learn/blockchain/what-is-decentralized-science-desci-the-future-of-scientific-research-on-the-blockchain/">What Is Decentralized Science (DeSci)? The Future of Scientific...</a>
+                    </li>
+                    <li id="citation-4">
+                        <div class="citation-label">Zeeve - Blog</div>
+                        <a class="citation-link" href="https://www.zeeve.io/blog/how-decentralized-sciencedesci-cures-the-common-ails-of-academic-research/">How Decentralized Science(DeSci) Cures the Common Ails of...</a>
+                    </li>
+                    <li id="citation-5">
+                        <div class="citation-label">TokenMinds - Blog</div>
+                        <a class="citation-link" href="https://tokenminds.co/blog/knowledge-base/decentralized-science">Decentralized Science (DeSci): A Paradigm Shift in Scientific Exploration - TokenMinds</a>
+                    </li>
+                    <li id="citation-6">
+                        <div class="citation-label">Frontiers - Journal Article</div>
+                        <a class="citation-link" href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2024.1353272/full">Advancing longevity research through decentralized... - Frontiers</a>
+                    </li>
+                    <li id="citation-7">
+                        <div class="citation-label">Gemini - Educational Article</div>
+                        <a class="citation-link" href="https://www.gemini.com/cryptopedia/dao-crypto-decentralized-governance-blockchain-governance">What Is a DAO's Role in Decentralized Governance? | Gemini</a>
+                    </li>
+                    <li id="citation-8">
+                        <div class="citation-label">Hacken - Blog</div>
+                        <a class="citation-link" href="https://hacken.io/discover/decentralized-science-desci/">What Is Decentralized Science (DeSci)? - Hacken</a>
+                    </li>
+                    <li id="citation-9">
+                        <div class="citation-label">Blockchain App Factory - Solutions</div>
+                        <a class="citation-link" href="https://www.blockchainappfactory.com/desci-solutions">Decentralized Science(DeSci) Solutions | Launch Your DeSci Startup</a>
+                    </li>
+                    <li id="citation-10">
+                        <div class="citation-label">CCN - Educational Article</div>
+                        <a class="citation-link" href="https://www.ccn.com/education/crypto/decentralized-science-desci-explained/">Decentralized Science (DeSci): Research Revolution & Blockchain - CCN.com</a>
+                    </li>
+                    <li id="citation-11">
+                        <div class="citation-label">ResearchHub Foundation - Blog</div>
+                        <a class="citation-link" href="https://blog.researchhub.foundation/the-4-steps-to-get-your-research-funded-by-a-desci-dao-a-step-by-step-guide/">How to Get Your Research Funded by A DeSci DAO: A Step-by-Step Guide.</a>
+                    </li>
+                    <li id="citation-12">
+                        <div class="citation-label">The Coin Bureau - Analysis</div>
+                        <a class="citation-link" href="https://coinbureau.com/analysis/top-desci-projects/">Top DeSci Projects Revolutionizing Scientific Research in 2025 - The Coin Bureau</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="supplementary">
+                <h2>Supplementary References</h2>
+                <ol>
+                    <li id="supplementary-1">
+                        <div class="supplementary-label">Frontiers - Journal Article</div>
+                        <a class="supplementary-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a>
+                    </li>
+                    <li id="supplementary-2">
+                        <div class="supplementary-label">ScienceDirect - Journal Article</div>
+                        <a class="supplementary-link" href="https://www.sciencedirect.com/science/article/abs/pii/S096386872300133X">A decentralized autonomous organization (DAO) based framework for biomedical research and innovation</a>
+                    </li>
+                    <li id="supplementary-3">
+                        <div class="supplementary-label">Zenodo - Preprint</div>
+                        <a class="supplementary-link" href="https://zenodo.org/records/10799462">Decentralized Science (DeSci) Movement: transforming science by making knowledge a public good through blockchain.</a>
+                    </li>
+                    <li id="supplementary-4">
+                        <div class="supplementary-label">arXiv - Preprint</div>
+                        <a class="supplementary-link" href="https://arxiv.org/html/2409.01823v1">DAOs of Collective Intelligence? Unraveling the Complexity of Blockchain Governance in Decentralized Autonomous Organizations - arXiv</a>
+                    </li>
+                    <li id="supplementary-5">
+                        <div class="supplementary-label">Blaize Tech - Blog</div>
+                        <a class="supplementary-link" href="https://blaize.tech/blog/what-is-desci/">What is DeSci: The Revolution of Decentralized Science - Blaize Tech</a>
+                    </li>
+                    <li id="supplementary-6">
+                        <div class="supplementary-label">CoinGecko - Educational Article</div>
+                        <a class="supplementary-link" href="https://www.coingecko.com/learn/what-is-desci-decentralized-science">What Is Decentralized Science (DeSci) and How Can It Change the Scientific Field?</a>
+                    </li>
+                    <li id="supplementary-7">
+                        <div class="citation-label">Frontiers - Journal Article</div>
+                        <a class="citation-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
         <div id="Maxx" class="tabcontent maxxdao-section">
             <h2>MaxxDAO: A Decentralized Autonomous Organization for Aesthetic Optimization</h2>
-    
             <h3>1. Executive Summary</h3>
             <p>MaxxDAO is a decentralized research organization (DeSci DAO) dedicated to identifying and developing accessible, scientifically supported solutions for aesthetic optimization. By initially focusing on readily achievable advancements in skin, hair, and dental aesthetics, MaxxDAO aims to generate revenue to reinvest in more complex research areas, such as addressing polygenic conditions like androgenic alopecia (AGA). This iterative funding model ensures sustainability and scalability while delivering value to both its community and investors.</p>
-    
             <h3>2. Mission & Vision</h3>
             <h4>Mission:</h4>
             <p>To provide evidence-backed, accessible solutions for aesthetic improvement, targeting key areas like skin, hair, and smile optimization, while progressively advancing research into complex conditions.</p>
             <h4>Vision:</h4>
             <p>To evolve into a leading decentralized innovator, redefining approaches to personal aesthetics and health optimization, with future expansion into broader health and wellness domains.</p>
-    
             <h3>3. Core Value Proposition</h3>
             <p>MaxxDAO offers a unique value proposition by:</p>
             <ul>
@@ -632,7 +673,6 @@
                 <li><span class="highlight">Generating Sustainable Revenue:</span> Implementing a revenue-driven research model to ensure financial independence and continuous reinvestment in advanced research.</li>
                 <li><span class="highlight">Embracing Decentralized Principles:</span> Utilizing blockchain technology and DeSci principles to foster transparency, collaboration, and community ownership.</li>
             </ul>
-    
             <h3>4. Brand Architecture</h3>
             <p>The "XX" in MaxxDAO provides a strong foundation for a versatile brand identity. This allows for the creation of sub-brands focused on specific niches within the aesthetic optimization domain:</p>
             <ul>
@@ -641,7 +681,6 @@
                 <li><span class="highlight">SmileMaxx / MaxxSmile:</span> Targeting dental aesthetics, such as enamel restoration.</li>
             </ul>
             <p>This sub-branding strategy enables focused marketing and product development while maintaining a cohesive overarching brand identity.</p>
-    
             <h3>5. Target Audience</h3>
             <p>MaxxDAO's primary target audience includes:</p>
             <ul>
@@ -649,7 +688,6 @@
                 <li><span class="highlight">Self-Improvement Enthusiasts:</span> Individuals interested in optimizing their health and well-being through scientifically validated approaches.</li>
                 <li><span class="highlight">Health-Conscious Consumers:</span> Individuals seeking safe and effective solutions for aesthetic enhancement.</li>
             </ul>
-    
             <h3>6. Investor Appeal</h3>
             <p>MaxxDAO presents a compelling investment opportunity due to:</p>
             <ul>
@@ -658,7 +696,6 @@
                 <li><span class="highlight">Strong Revenue Potential:</span> Prioritizing monetization of early research successes to generate sustainable funding for future projects.</li>
                 <li><span class="highlight">Decentralized Governance:</span> Offering investors transparency and participation in the DAO's decision-making processes.</li>
             </ul>
-    
             <h3>7. Enhanced Features Based on DeSci Research</h3>
             <p>Integrating insights from successful DeSci DAOs and leveraging cutting-edge Web3 technologies, MaxxDAO incorporates the following features:</p>
             <ul>
@@ -693,7 +730,6 @@
                     </ul>
                 </li>
             </ul>
-    
             <h3>8. Roadmap</h3>
             <h4>Phase 1: Foundation (Pre-TGE)</h4>
             <ul>
@@ -716,27 +752,76 @@
                 <li>Expand into broader health and wellness initiatives.</li>
                 <li>Continuously refine governance processes and community engagement strategies.</li>
             </ul>
-    
             <h3>9. Conclusion</h3>
             <p>MaxxDAO is strategically positioned to become a leader in decentralized aesthetic optimization, bridging the gap between scientific research and practical applications. By combining a strong scientific foundation with cutting-edge Web3 technologies and a vibrant community, MaxxDAO will unlock aesthetic excellence and maximize human potential.</p>
+        </div>
+        <div id="Ideas" class="tabcontent">
+            <h2>Drug Candidate Ideas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Drug Candidate</th>
+                        <th>Indication</th>
+                        <th>Links/References</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Candidate 1</td>
+                        <td>Skin aging</td>
+                        <td>
+                            <a href="#">Link 1</a>, 
+                            <a href="#">Link 2</a>
+                        </td>
+                        <td>Some notes about this candidate</td>
+                    </tr>
+                    <tr>
+                        <td>Candidate 2</td>
+                        <td>Hair loss</td>
+                        <td>
+                            <a href="#">Link 3</a>
+                        </td>
+                        <td>Notes about this candidate</td>
+                    </tr>
+                    <tr>
+                        <td>Candidate 3</td>
+                        <td>Dental Aesthetics</td>
+                        <td>
+                            <a href="#">Link 4</a>,
+                            <a href="#">Link 5</a>,
+                            <a href="#">Link 6</a>
+                        </td>
+                        <td>More notes</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <script>
             function openTab(evt, tabName) {
                 var i, tabcontent, tablinks;
+        
+                // Get all elements with class="tabcontent" and hide them
                 tabcontent = document.getElementsByClassName("tabcontent");
                 for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
                 }
+        
+                // Get all elements with class="tablinks" and remove the class "active"
                 tablinks = document.getElementsByClassName("tablinks");
                 for (i = 0; i < tablinks.length; i++) {
                     tablinks[i].className = tablinks[i].className.replace(" active", "");
                 }
+        
+                // Show the current tab, and add an "active" class to the button that opened the tab
                 document.getElementById(tabName).style.display = "block";
                 evt.currentTarget.className += " active";
             }
+        
+            // Get the element with id="DeSciTab" and click on it
+            document.getElementById("DeSciTab").click();
         </script>
     </div>
 </body>
 </html>
-    
