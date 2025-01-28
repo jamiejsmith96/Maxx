@@ -4,213 +4,279 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore DeSci DAO and MaxxDAO, delving into decentralized science, governance, tokenomics, and aesthetic optimization research.">
-    <title>DeSci DAO & MaxxDAO</title>
+    <title>DeSci DAO Research/Planning</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --light-bg: #f8f9fa;
-            --border-color: #e0e0e0;
-            --text-color: #333;
-            --link-color: #007bff; /* Standard link color */
-            --hover-color: #0056b3; /* Darker blue for hover */
-            --heading-font: 'Arial', sans-serif; /* Modern, readable font */
-            --body-font: 'Open Sans', sans-serif; /* Another highly readable font */
+            /* --- COLOR PALETTE --- */
+            --primary-color: #0A2463; /* Dark Blue - Professional and Trustworthy */
+            --secondary-color: #3E92CC; /* Lighter Blue - Calming and Tech-focused */
+            --accent-color: #FF6B6B; /* Vibrant Red - Energy, Passion, Innovation (used sparingly) */
+            --background-color: #F5F5F5; /* Light Gray - Clean and Modern */
+            --text-color: #333333; /* Dark Gray - Easy Readability */
+            --heading-font: 'Raleway', sans-serif; /* Modern and Elegant */
+            --body-font: 'Roboto', sans-serif; /* Highly Readable */
+            --link-color: #3E92CC;
+            --hover-color: #0A2463;
+
+            /* --- OTHER STYLING --- */
+            --border-radius: 10px;
+            --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
         body {
             font-family: var(--body-font);
             line-height: 1.6;
             margin: 0;
-            background-color: var(--light-bg);
+            background-color: var(--background-color);
             color: var(--text-color);
+            padding-top: 2rem;
+            padding-bottom: 4rem;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
+            max-width: 1100px;
+            margin: auto;
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Increased shadow for depth */
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
-        h1, h2, h3 {
-            color: var(--primary-color);
-            margin-top: 1.5em;
+        /* --- HEADINGS --- */
+        h1, h2, h3, h4 {
             font-family: var(--heading-font);
+            color: var(--primary-color);
         }
 
         h1 {
-            border-bottom: 3px solid var(--accent-color); /* Thicker border */
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 1rem;
         }
 
-        .tab {
-            overflow: hidden; /* Contains the floated buttons */
-            border-radius: 8px;
-            background: var(--light-bg);
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
             margin-bottom: 1.5rem;
-            display: flex; /* Use flexbox for horizontal alignment */
-            justify-content: center; /* Center the tabs */
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- NAVIGATION TABS --- */
+        .tab {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
         }
 
         .tab button {
-            background-color: inherit;
+            background-color: transparent;
             border: none;
             outline: none;
             cursor: pointer;
             padding: 1rem 2rem;
-            transition: background-color 0.3s ease;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            font-family: var(--heading-font);
             font-weight: 600;
             color: var(--primary-color);
-            border-radius: 8px; /* Rounded corners for buttons */
-            margin: 0.5rem; /* Space between buttons */
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
         }
 
         .tab button:hover {
-            background-color: var(--accent-color);
+            background-color: var(--secondary-color);
             color: white;
         }
 
         .tab button.active {
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow to active tab */
+            box-shadow: var(--box-shadow);
         }
 
+        /* --- TAB CONTENT --- */
         .tabcontent {
             display: none;
-            padding: 2rem;
-            animation: fadeEffect 1s; /* Fading effect for content */
+            animation: fadeIn 0.8s;
         }
 
-        /* Fade in tabs */
-        @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
+        /* --- TABLE --- */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden; /* Ensures rounded corners on the table */
         }
 
         th, td {
             padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
             text-align: left;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: var(--accent-color); /* Changed to accent color */
-            color: white; /* White text for contrast */
+            background-color: var(--primary-color);
+            color: white;
             font-weight: 600;
         }
 
+        /* --- LISTS --- */
         ul, ol {
             padding-left: 2rem;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
         li {
-            margin-bottom: 0.8rem; /* Increased spacing */
+            margin-bottom: 0.8rem;
         }
 
+        /* --- LINKS --- */
         a {
             color: var(--link-color);
-            text-decoration: none; /* No underline by default */
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline; /* Underline on hover */
             color: var(--hover-color);
+            text-decoration: underline;
         }
 
         sup a {
-            font-weight: 600; /* Make citation links bolder */
+            font-weight: 600;
         }
 
+        /* --- CITATIONS --- */
         .citation {
-            background: var(--light-bg);
+            background-color: var(--background-color);
             padding: 2rem;
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             margin-top: 3rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            box-shadow: var(--box-shadow);
         }
 
-        .citation ol {
-            padding-left: 1.5rem;
-        }
-
-        .citation li {
-            margin-bottom: 1.2rem; /* More space between citations */
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                margin: 1rem;
-                padding: 1rem;
-            }
-
-            .tab {
-                flex-direction: column; /* Stack tabs vertically */
-                align-items: stretch; /* Full width */
-            }
-
-            .tab button {
-                text-align: center;
-                margin: 0.2rem 0; /* Vertical spacing */
-                width: 100%;
-            }
-
-            table {
-                display: block; /* Makes the table scrollable */
-                overflow-x: auto;
-            }
-        }
-
-        /* Additional Styling for MaxxDAO Section */
+        /* --- MAXXDAO SECTION --- */
         .maxxdao-section h3 {
-            color: var(--accent-color); /* Use accent color for subheadings */
-            margin-top: 2rem;
-            border-bottom: 2px solid var(--accent-color);
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
         }
 
-        .maxxdao-section p, .maxxdao-section ul, .maxxdao-section ol {
-            margin-bottom: 1rem; /* Consistent spacing */
+        .maxxdao-section p,
+        .maxxdao-section ul,
+        .maxxdao-section ol {
+            margin-bottom: 1rem;
         }
-        .maxxdao-section ul, .maxxdao-section ol{
-          padding-left: 2rem;
+
+        .maxxdao-section ul,
+        .maxxdao-section ol {
+            padding-left: 2rem;
         }
-        .maxxdao-section li{
-          margin-bottom: 0.8rem;
+
+        .maxxdao-section li {
+            margin-bottom: 0.8rem;
         }
 
         .maxxdao-section .highlight {
-            background-color: #FFFACD; /* Light yellow highlight */
+            background-color: #FFF5E1; /* Light Orange - Matches Accent Color */
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
+            font-weight: 600;
         }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.6rem;
+            }
+
+            .tab {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab button {
+                width: 90%;
+                margin: 0.5rem 0;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+         /* --- Animations --- */
+         .maxxdao-section h3 {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .maxxdao-section p,
+        .maxxdao-section ul,
+        .maxxdao-section ol,
+        .maxxdao-section .highlight {
+            animation: fadeIn 1.2s ease-in;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <h1>DeSci DAO Research/Planning</h1>
+
         <div class="tab">
             <button class="tablinks active" onclick="openTab(event, 'DeSci')">DeSci DAO</button>
             <button class="tablinks" onclick="openTab(event, 'Maxx')">MaxxDAO</button>
         </div>
 
         <div id="DeSci" class="tabcontent" style="display: block;">
-          <h1>Decentralized Science DAOs: A Technical Deep Dive</h1>
+          <h2>Decentralized Science DAOs: A Technical Deep Dive</h2>
         
         <p>Decentralized science (DeSci) is revolutionizing scientific research by leveraging blockchain technology to create a more open, collaborative, and equitable ecosystem<sup><a href="#citation-1">1</a></sup>. DeSci DAOs are a key component of this movement, offering a new way to organize and fund scientific projects<sup><a href="#citation-2">2</a></sup>. This article provides a technical deep dive into DeSci DAOs, exploring their governance mechanisms, tokenomics, and underlying blockchain technologies. It also examines the challenges and limitations of DeSci DAOs and potential future developments.</p>
     
@@ -265,7 +331,7 @@
     
         <h3>Layer-2 Solutions:</h3>
         <ul>
-            <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-4">4</a></sup>.</li>
+                <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-4">4</a></sup>.</li>
         </ul>
     
         <h3>Decentralized Storage Systems:</h3>
@@ -382,7 +448,7 @@
             <li id="citation-13"><a href="https://www.blockchainappfactory.com/desci-solutions">Decentralized Science(DeSci) Solutions | Launch Your DeSci Startup</a></li>
             <li id="citation-14"><a href="https://www.ccn.com/education/crypto/decentralized-science-desci-explained/">Decentralized Science (DeSci): Research Revolution & Blockchain - CCN.com</a></li>
             <li id="citation-15"><a href="https://blaize.tech/blog/what-is-desci/">What is DeSci: The Revolution of Decentralized Science - Blaize Tech</a></li>
-            <li id="citation-16"><a href="https://www.binance.com/en/square/post/17462558900577">DeSci: Revolutionizing Science Through Blockchain | BlockchainBaller on Binance Square</a></li>
+    <li id="citation-16"><a href="https://www.binance.com/en/square/post/17462558900577">DeSci: Revolutionizing Science Through Blockchain | BlockchainBaller on Binance Square</a></li>
             <li id="citation-17"><a href="https://coinbureau.com/analysis/top-desci-projects/">Top DeSci Projects Revolutionizing Scientific Research in 2025 - The Coin Bureau</a></li>
             <li id="citation-18"><a href="https://blog.researchhub.foundation/the-4-steps-to-get-your-research-funded-by-a-desci-dao-a-step-by-step-guide/">How to Get Your Research Funded by A DeSci DAO: A Step-by-Step Guide.</a></li>
             <li id="citation-19"><a href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a></li>
@@ -390,105 +456,131 @@
         </div>
         </div>
         
-        <div id="Maxx" class="tabcontent maxxdao-section">
-            <h2>MaxxDAO: A Decentralized Autonomous Organization for Aesthetic Optimization</h2>
-            <h3>1. Executive Summary</h3>
-            <p>MaxxDAO is a decentralized research organization (DeSci DAO) dedicated to identifying and developing accessible, scientifically supported solutions for aesthetic optimization. By initially focusing on readily achievable advancements in skin, hair, and dental aesthetics, MaxxDAO aims to generate revenue to reinvest in more complex research areas, such as addressing polygenic conditions like androgenic alopecia (AGA). This iterative funding model ensures sustainability and scalability while delivering value to both its community and investors.</p>
-      
-            <h3>2. Mission & Vision</h3>
-            <h4>Mission:</h4>
-            <p>To provide evidence-backed, accessible solutions for aesthetic improvement, targeting key areas like skin, hair, and smile optimization, while progressively advancing research into complex conditions.</p>
-            <h4>Vision:</h4>
-            <p>To evolve into a leading decentralized innovator, redefining approaches to personal aesthetics and health optimization, with future expansion into broader health and wellness domains.</p>
-      
-            <h3>3. Core Value Proposition</h3>
-            <p>MaxxDAO offers a unique value proposition by:</p>
-            <p><span class="highlight">Targeting a Niche Market:</span> MaxxDAO directly addresses the needs of the "looksmaxxing" community and individuals seeking evidence-based, cost-effective methods for aesthetic enhancement. This resonates with a highly engaged and underserved niche, positioning MaxxDAO as a go-to authority in this space.</p>
-            <p><span class="highlight">Prioritizing Scientific Validity:</span> Focusing on projects with robust scientific support and demonstrable efficacy.</p>
-            <p><span class="highlight">Ensuring Accessibility:</span> Developing solutions that are affordable and readily available to a broad audience.</p>
-            <p><span class="highlight">Generating Sustainable Revenue:</span> Implementing a revenue-driven research model to ensure financial independence and continuous reinvestment in advanced research.</p>
-            <p><span class="highlight">Embracing Decentralized Principles:</span> Utilizing blockchain technology and DeSci principles to foster transparency, collaboration, and community ownership.</p>
-      
-            <h3>4. Brand Architecture</h3>
-            <p>The "XX" in MaxxDAO provides a strong foundation for a versatile brand identity.</p>
-            <p>This allows for the creation of sub-brands focused on specific niches within the aesthetic optimization domain:</p>
-            <p><span class="highlight">SkinMaxx / MaxxSkin:</span> Dedicated to skin health and rejuvenation.</p>
-            <p><span class="highlight">HairMaxx / MaxxHair:</span> Addressing hair growth and scalp health.</p>
-            <p><span class="highlight">SmileMaxx / MaxxSmile:</span> Targeting dental aesthetics, such as enamel restoration.</p>
-            <p>This sub-branding strategy enables focused marketing and product development while maintaining a cohesive overarching brand identity.</p>
-      
-            <h3>5. Target Audience</h3>
-            <p>MaxxDAO's primary target audience includes:</p>
-            <p><span class="highlight">Looksmaxxing Community:</span> Individuals actively seeking evidence-based methods to improve their physical appearance.</p>
-            <p><span class="highlight">Self-Improvement Enthusiasts:</span> Individuals interested in optimizing their health and well-being through scientifically validated approaches.</p>
-            <p><span class="highlight">Health-Conscious Consumers:</span> Individuals seeking safe and effective solutions for aesthetic enhancement.</p>
-      
-            <h3>6. Investor Appeal</h3>
-            <p>MaxxDAO presents a compelling investment opportunity due to:</p>
-            <p><span class="highlight">Clear Market Demand:</span> Addressing a growing market for self-improvement and health optimization solutions.</p>
-            <p><span class="highlight">Scalable Business Model:</span> Potential for expansion into diverse areas of aesthetics and broader health and wellness domains.</p>
-            <p><span class="highlight">Strong Revenue Potential:</span> Prioritizing monetization of early research successes to generate sustainable funding for future projects.</p>
-            <p><span class="highlight">Decentralized Governance:</span> Offering investors transparency and participation in the DAO's decision-making processes.</p>
-      
-            <h3>7. Enhanced Features Based on DeSci Research</h3>
-            <p>Integrating insights from successful DeSci DAOs and leveraging cutting-edge Web3 technologies, MaxxDAO incorporates the following features:</p>
-            <p><span class="highlight">Expert Collaboration:</span> Partner with experienced researchers from established DeSci DAOs like VitaDAO, AthenaDAO, and potentially HairDAO due to an established relationship and aligned research interests.</p>
-            <p><span class="highlight">Decentralized Infrastructure:</span></p>
+        <div id="Maxx" class="tabcontent maxxdao-section">
+            <h2>MaxxDAO: A Decentralized Autonomous Organization for Aesthetic Optimization</h2>
+    
+            <h3>1. Executive Summary</h3>
+            <p>MaxxDAO is a decentralized research organization (DeSci DAO) dedicated to identifying and developing accessible, scientifically supported solutions for aesthetic optimization. By initially focusing on readily achievable advancements in skin, hair, and dental aesthetics, MaxxDAO aims to generate revenue to reinvest in more complex research areas, such as addressing polygenic conditions like androgenic alopecia (AGA). This iterative funding model ensures sustainability and scalability while delivering value to both its community and investors.</p>
+    
+            <h3>2. Mission & Vision</h3>
+            <h4>Mission:</h4>
+            <p>To provide evidence-backed, accessible solutions for aesthetic improvement, targeting key areas like skin, hair, and smile optimization, while progressively advancing research into complex conditions.</p>
+            <h4>Vision:</h4>
+            <p>To evolve into a leading decentralized innovator, redefining approaches to personal aesthetics and health optimization, with future expansion into broader health and wellness domains.</p>
+    
+            <h3>3. Core Value Proposition</h3>
+            <p>MaxxDAO offers a unique value proposition by:</p>
             <ul>
-              <li><span class="highlight">Blockchain Platform:</span> MaxxDAO will leverage the strengths of established blockchains like Ethereum, Solana, and Polygon, carefully considering factors such as scalability, security, and community support to select the optimal platform for its needs.</li>
-              <li><span class="highlight">IPFS:</span> Employing the InterPlanetary File System (IPFS) for secure and transparent storage of research data and intellectual property.</li>
+                <li><span class="highlight">Targeting a Niche Market:</span> MaxxDAO directly addresses the needs of the "looksmaxxing" community and individuals seeking evidence-based, cost-effective methods for aesthetic enhancement. This resonates with a highly engaged and underserved niche, positioning MaxxDAO as a go-to authority in this space.</li>
+                <li><span class="highlight">Prioritizing Scientific Validity:</span> Focusing on projects with robust scientific support and demonstrable efficacy.</li>
+                <li><span class="highlight">Ensuring Accessibility:</span> Developing solutions that are affordable and readily available to a broad audience.</li>
+                <li><span class="highlight">Generating Sustainable Revenue:</span> Implementing a revenue-driven research model to ensure financial independence and continuous reinvestment in advanced research.</li>
+                <li><span class="highlight">Embracing Decentralized Principles:</span> Utilizing blockchain technology and DeSci principles to foster transparency, collaboration, and community ownership.</li>
             </ul>
-            <p><span class="highlight">Robust Governance:</span></p>
+    
+            <h3>4. Brand Architecture</h3>
+            <p>The "XX" in MaxxDAO provides a strong foundation for a versatile brand identity. This allows for the creation of sub-brands focused on specific niches within the aesthetic optimization domain:</p>
             <ul>
-              <li><span class="highlight">Token-Based Voting:</span> MaxxDAO tokens grant holders voting rights on proposals and initiatives.</li>
-              <li><span class="highlight">Quadratic Voting:</span> Implementing quadratic voting to empower smaller stakeholders and promote a more democratic governance process.</li>
-              <li><span class="highlight">Reputation System:</span> Recognizing and rewarding active community members and valuable contributions through a reputation system.</li>
+                <li><span class="highlight">SkinMaxx / MaxxSkin:</span> Dedicated to skin health and rejuvenation.</li>
+                <li><span class="highlight">HairMaxx / MaxxHair:</span> Addressing hair growth and scalp health.</li>
+                <li><span class="highlight">SmileMaxx / MaxxSmile:</span> Targeting dental aesthetics, such as enamel restoration.</li>
             </ul>
-            <p><span class="highlight">Tokenized Incentives:</span></p>
+            <p>This sub-branding strategy enables focused marketing and product development while maintaining a cohesive overarching brand identity.</p>
+    
+            <h3>5. Target Audience</h3>
+            <p>MaxxDAO's primary target audience includes:</p>
             <ul>
-              <li><span class="highlight">MaxxDAO Tokens:</span> Utilizing tokens for governance, incentivizing research contributions, and facilitating access to resources within the DAO.</li>
-              <li><span class="highlight">Rewards:</span> Awarding tokens for research participation, peer review, data sharing, and community engagement.</li>
+                <li><span class="highlight">Looksmaxxing Community:</span> Individuals actively seeking evidence-based methods to improve their physical appearance.</li>
+                <li><span class="highlight">Self-Improvement Enthusiasts:</span> Individuals interested in optimizing their health and well-being through scientifically validated approaches.</li>
+                <li><span class="highlight">Health-Conscious Consumers:</span> Individuals seeking safe and effective solutions for aesthetic enhancement.</li>
             </ul>
-            <p><span class="highlight">IP-NFTs:</span> Representing research findings, data sets, and intellectual property as NFTs to ensure ownership, facilitate funding, and incentivize further research.</p>
-            <p><span class="highlight">DAO Tools:</span> Integrating DAO tools like Snapshot for voting and Discord for community interaction and communication.</p>
-            <p><span class="highlight">Community Engagement:</span></p>
+    
+            <h3>6. Investor Appeal</h3>
+            <p>MaxxDAO presents a compelling investment opportunity due to:</p>
             <ul>
-                <li><span class="highlight">AMAs and Webinars:</span> Host regular sessions with experts and community members to discuss research findings, and future projects, and gather feedback.</li>
-                <li><span class="highlight">Hackathons and Competitions:</span> Encouraging community contributions and innovation through coding challenges, design contests, and other events.</li>
-                <li><span class="highlight">Merchandise and Branding:</span> Creating branded merchandise to foster community spirit and generate additional revenue.</li>
-                <li><span class="highlight">Social Media and Discord:</span> Maintaining active social media channels and a vibrant Discord community for real-time discussions and updates.</li>
+                <li><span class="highlight">Clear Market Demand:</span> Addressing a growing market for self-improvement and health optimization solutions.</li>
+                <li><span class="highlight">Scalable Business Model:</span> Potential for expansion into diverse areas of aesthetics and broader health and wellness domains.</li>
+                <li><span class="highlight">Strong Revenue Potential:</span> Prioritizing monetization of early research successes to generate sustainable funding for future projects.</li>
+                <li><span class="highlight">Decentralized Governance:</span> Offering investors transparency and participation in the DAO's decision-making processes.</li>
             </ul>
-      
-            <h3>8. Roadmap</h3>
-            <h4>Phase 1: Foundation (Pre-TGE)</h4>
-            <p>Establish a core team and advisory board. Develop a comprehensive whitepaper and tokenomics model. Secure seed funding and establish a legal framework. Build initial community and online presence.</p>
-      
-            <h4>Phase 2: Launch & Growth (TGE & Post-TGE)</h4>
-            <p>Conduct a Token Generation Event (TGE) and list MaxxDAO tokens on decentralized exchanges. Implement governance framework and launch initial research projects focused on low-cost, high-impact solutions. Develop and launch sub-brands (SkinMaxx, HairMaxx, SmileMaxx). Expand the community through targeted marketing and partnerships.</p>
-      
-            <h4>Phase 3: Expansion & Maturity</h4>
-            <p>Expand research into polygenic conditions and explore partnerships with relevant organizations. Integrate AI and machine learning for data analysis and research acceleration. Expand into broader health and wellness initiatives. Continuously refine governance processes and community engagement strategies.</p>
-      
-            <h3>9. Conclusion</h3>
-            <p>MaxxDAO is strategically positioned to become a leader in decentralized aesthetic optimization, bridging the gap between scientific research and practical applications.</p>
-            <p>By combining a strong scientific foundation with cutting-edge Web3 technologies and a vibrant community, MaxxDAO will unlock aesthetic excellence and maximize human potential.</p>
-        </div>
-        
-        <script>
-            function openTab(evt, tabName) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        </script>
+    
+            <h3>7. Enhanced Features Based on DeSci Research</h3>
+            <p>Integrating insights from successful DeSci DAOs and leveraging cutting-edge Web3 technologies, MaxxDAO incorporates the following features:</p>
+            <ul>
+                <li><span class="highlight">Expert Collaboration:</span> Partner with experienced researchers from established DeSci DAOs like VitaDAO, AthenaDAO, and potentially HairDAO due to an established relationship and aligned research interests.</li>
+                <li><span class="highlight">Decentralized Infrastructure:</span>
+                    <ul>
+                        <li><span class="highlight">Blockchain Platform:</span> MaxxDAO will leverage the strengths of established blockchains like Ethereum, Solana, and Polygon, carefully considering factors such as scalability, security, and community support to select the optimal platform for its needs.</li>
+                        <li><span class="highlight">IPFS:</span> Employing the InterPlanetary File System (IPFS) for secure and transparent storage of research data and intellectual property.</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">Robust Governance:</span>
+                    <ul>
+                        <li><span class="highlight">Token-Based Voting:</span> MaxxDAO tokens grant holders voting rights on proposals and initiatives.</li>
+                        <li><span class="highlight">Quadratic Voting:</span> Implementing quadratic voting to empower smaller stakeholders and promote a more democratic governance process.</li>
+                        <li><span class="highlight">Reputation System:</span> Recognizing and rewarding active community members and valuable contributions through a reputation system.</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">Tokenized Incentives:</span>
+                    <ul>
+                        <li><span class="highlight">MaxxDAO Tokens:</span> Utilizing tokens for governance, incentivizing research contributions, and facilitating access to resources within the DAO.</li>
+                        <li><span class="highlight">Rewards:</span> Awarding tokens for research participation, peer review, data sharing, and community engagement.</li>
+                        <li><span class="highlight">IP-NFTs:</span> Representing research findings, data sets, and intellectual property as NFTs to ensure ownership, facilitate funding, and incentivize further research.</li>
+                    </ul>
+                </li>
+                <li><span class="highlight">DAO Tools:</span> Integrating DAO tools like Snapshot for voting and Discord for community interaction and communication.</li>
+                <li><span class="highlight">Community Engagement:</span>
+                    <ul>
+                        <li><span class="highlight">AMAs and Webinars:</span> Host regular sessions with experts and community members to discuss research findings, future projects, and gather feedback.</li>
+                        <li><span class="highlight">Hackathons and Competitions:</span> Encouraging community contributions and innovation through coding challenges, design contests, and other events.</li>
+                        <li><span class="highlight">Merchandise and Branding:</span> Creating branded merchandise to foster community spirit and generate additional revenue.</li>
+                        <li><span class="highlight">Social Media and Discord:</span> Maintaining active social media channels and a vibrant Discord community for real-time discussions and updates.</li>
+                    </ul>
+                </li>
+            </ul>
+    
+            <h3>8. Roadmap</h3>
+            <h4>Phase 1: Foundation (Pre-TGE)</h4>
+            <ul>
+                <li>Establish a core team and advisory board.</li>
+                <li>Develop a comprehensive whitepaper and tokenomics model.</li>
+                <li>Secure seed funding and establish a legal framework.</li>
+                <li>Build initial community and online presence.</li>
+            </ul>
+            <h4>Phase 2: Launch & Growth (TGE & Post-TGE)</h4>
+            <ul>
+                <li>Conduct a Token Generation Event (TGE) and list MaxxDAO tokens on decentralized exchanges.</li>
+                <li>Implement governance framework and launch initial research projects focused on low-cost, high-impact solutions.</li>
+                <li>Develop and launch sub-brands (SkinMaxx, HairMaxx, SmileMaxx).</li>
+                <li>Expand the community through targeted marketing and partnerships.</li>
+            </ul>
+            <h4>Phase 3: Expansion & Maturity</h4>
+            <ul>
+                <li>Expand research into polygenic conditions and explore partnerships with relevant organizations.</li>
+                <li>Integrate AI and machine learning for data analysis and research acceleration.</li>
+                <li>Expand into broader health and wellness initiatives.</li>
+                <li>Continuously refine governance processes and community engagement strategies.</li>
+            </ul>
+    
+            <h3>9. Conclusion</h3>
+            <p>MaxxDAO is strategically positioned to become a leader in decentralized aesthetic optimization, bridging the gap between scientific research and practical applications. By combining a strong scientific foundation with cutting-edge Web3 technologies and a vibrant community, MaxxDAO will unlock aesthetic excellence and maximize human potential.</p>
+        </div>
+
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>
     </div>
 </body>
 </html>
