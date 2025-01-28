@@ -40,6 +40,7 @@
             padding: 3rem;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
+            animation: fadeInUp 1s ease-out;
         }
 
         /* --- HEADINGS --- */
@@ -54,18 +55,21 @@
             margin-bottom: 2rem;
             border-bottom: 3px solid var(--secondary-color);
             padding-bottom: 1rem;
+            animation: slideInDown 1s ease-out;
         }
 
         h2 {
             font-size: 2.2rem;
             margin-top: 3rem;
             margin-bottom: 1.5rem;
+            animation: slideInLeft 1s ease-out;
         }
 
         h3 {
             font-size: 1.8rem;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
+            animation: slideInRight 1s ease-out;
         }
 
         /* --- NAVIGATION TABS --- */
@@ -73,6 +77,7 @@
             display: flex;
             justify-content: center;
             margin-bottom: 3rem;
+            animation: slideInDown 1s ease-out;
         }
 
         .tab button {
@@ -107,11 +112,6 @@
             animation: fadeIn 0.8s;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         /* --- TABLE --- */
         table {
             width: 100%;
@@ -120,6 +120,7 @@
             box-shadow: var(--box-shadow);
             border-radius: var(--border-radius);
             overflow: hidden; /* Ensures rounded corners on the table */
+            animation: fadeInUp 1s ease-out;
         }
 
         th, td {
@@ -167,6 +168,51 @@
             border-radius: var(--border-radius);
             margin-top: 3rem;
             box-shadow: var(--box-shadow);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .citation h2, .supplementary h2 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        .citation-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .citation-link {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+                /* --- SUPPLEMENTARY --- */
+        .supplementary {
+            background-color: var(--background-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+            box-shadow: var(--box-shadow);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .supplementary h2 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+        
+        .supplementary-label {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .supplementary-link {
+            display: block;
+            margin-bottom: 1rem;
         }
 
         /* --- MAXXDAO SECTION --- */
@@ -174,12 +220,14 @@
             color: var(--secondary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 0.5rem;
+            animation: slideInRight 1s ease-out;
         }
 
         .maxxdao-section p,
         .maxxdao-section ul,
         .maxxdao-section ol {
             margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
         }
 
         .maxxdao-section ul,
@@ -196,6 +244,18 @@
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-weight: 600;
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
 
         /* --- RESPONSIVE DESIGN --- */
@@ -231,21 +291,33 @@
                 overflow-x: auto;
             }
         }
-         /* --- Animations --- */
-         .maxxdao-section h3 {
-            animation: slideInRight 1s ease-out;
-        }
 
-        .maxxdao-section p,
-        .maxxdao-section ul,
-        .maxxdao-section ol,
-        .maxxdao-section .highlight {
-            animation: fadeIn 1.2s ease-in;
-        }
-
-        @keyframes slideInRight {
+        /* --- KEYFRAMES FOR ANIMATIONS --- */
+        @keyframes fadeInUp {
             from {
-                transform: translateX(-50px);
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-20px);
                 opacity: 0;
             }
             to {
@@ -254,15 +326,20 @@
             }
         }
 
-        @keyframes fadeIn {
+        @keyframes slideInRight {
             from {
+                transform: translateX(20px);
                 opacity: 0;
             }
             to {
+                transform: translateX(0);
                 opacity: 1;
             }
         }
-
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -312,7 +389,7 @@
                 <td>AthenaDAO</td>
                 <td>Women's health research</td>
                 <td>Supports research and development of treatments for women's health issues.</td>
-            </tr>
+            </tr>
             <tr>
                 <td>HairDAO</td>
                 <td>Hair loss research</td>
@@ -331,7 +408,7 @@
     
         <h3>Layer-2 Solutions:</h3>
         <ul>
-                <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-4">4</a></sup>.</li>
+            <li><strong>Polygon:</strong> Polygon is a layer-2 scaling solution for Ethereum that aims to improve transaction speeds and reduce costs, making it a viable option for DeSci DAOs that require high throughput. Polygon was specifically mentioned in the research as a potential alternative to Ethereum for DeSci projects<sup><a href="#citation-4">4</a></sup>.</li>
         </ul>
     
         <h3>Decentralized Storage Systems:</h3>
@@ -431,29 +508,107 @@
     <p>When designing my own DeSci DAO, it is crucial to consider the technical aspects discussed in this article, including the choice of blockchain technology, governance mechanisms, and tokenomics model. For example, the scalability issues associated with Ethereum may lead me to consider alternative platforms like Polygon or Arweave. Additionally, the governance challenges highlighted in the research emphasize the need for a carefully designed governance model that balances the interests of diverse stakeholders and ensures accountability. The insights on IP-NFTs and tokenized incentive systems will also inform the design of my DAO's tokenomics model to incentivize participation and ensure the sustainability of the organization. Addressing the challenges and limitations of DeSci DAOs will be essential for their long-term success and sustainability.</p>
 
     <div class="citation">
-        <h2>Works Cited</h2>
-        <ol>
-            <li id="citation-1"><a href="https://www.coinbase.com/learn/crypto-glossary/what-is-decentralized-science-desci-and-how-does-it-plan-to-fix-academic-research">What is decentralized science (Desci) and how does it plan to fix academic research?</a></li>
-            <li id="citation-2"><a href="https://www.ulam.io/blog/how-decentralized-science-is-revolutionizing-research">How Decentralized Science (DeSci) Improves Research - Ulam Labs</a></li>
-            <li id="citation-3"><a href="https://www.bitstamp.net/learn/blockchain/what-is-decentralized-science-desci-the-future-of-scientific-research-on-the-blockchain/">What Is Decentralized Science (DeSci)? The Future of Scientific...</a></li>
-            <li id="citation-4"><a href="https://www.coingecko.com/learn/what-is-desci-decentralized-science">What Is Decentralized Science (DeSci) and How Can It Change the Scientific Field?</a></li>
-            <li id="citation-5"><a href="https://www.zeeve.io/blog/how-decentralized-sciencedesci-cures-the-common-ails-of-academic-research/">How Decentralized Science(DeSci) Cures the Common Ails of...</a></li>
-            <li id="citation-6"><a href="https://tokenminds.co/blog/knowledge-base/decentralized-science">Decentralized Science (DeSci): A Paradigm Shift in Scientific Exploration - TokenMinds</a></li>
-            <li id="citation-7"><a href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2024.1353272/full">Advancing longevity research through decentralized... - Frontiers</a></li>
-            <li id="citation-8"><a href="https://www.gemini.com/cryptopedia/dao-crypto-decentralized-governance-blockchain-governance">What Is a DAO's Role in Decentralized Governance? | Gemini</a></li>
-            <li id="citation-9"><a href="https://hacken.io/discover/decentralized-science-desci/">What Is Decentralized Science (DeSci)? - Hacken</a></li>
-            <li id="citation-10"><a href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a></li>
-            <li id="citation-11"><a href="https://arxiv.org/html/2409.01823v1">DAOs of Collective Intelligence? Unraveling the Complexity of Blockchain Governance in Decentralized Autonomous Organizations - arXiv</a></li>
-            <li id="citation-12"><a href="https://www.scielo.br/j/bar/a/nqdm7FjmhVTyg9bV4WPJLcC/?format=pdf&lang=en">Decentralized Autonomous Organizations (DAOs): Field of Research and Avenues for Future Studies - SciELO</a></li>
-            <li id="citation-13"><a href="https://www.blockchainappfactory.com/desci-solutions">Decentralized Science(DeSci) Solutions | Launch Your DeSci Startup</a></li>
-            <li id="citation-14"><a href="https://www.ccn.com/education/crypto/decentralized-science-desci-explained/">Decentralized Science (DeSci): Research Revolution & Blockchain - CCN.com</a></li>
-            <li id="citation-15"><a href="https://blaize.tech/blog/what-is-desci/">What is DeSci: The Revolution of Decentralized Science - Blaize Tech</a></li>
-    <li id="citation-16"><a href="https://www.binance.com/en/square/post/17462558900577">DeSci: Revolutionizing Science Through Blockchain | BlockchainBaller on Binance Square</a></li>
-            <li id="citation-17"><a href="https://coinbureau.com/analysis/top-desci-projects/">Top DeSci Projects Revolutionizing Scientific Research in 2025 - The Coin Bureau</a></li>
-            <li id="citation-18"><a href="https://blog.researchhub.foundation/the-4-steps-to-get-your-research-funded-by-a-desci-dao-a-step-by-step-guide/">How to Get Your Research Funded by A DeSci DAO: A Step-by-Step Guide.</a></li>
-            <li id="citation-19"><a href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a></li>
+        <h2>Works Cited</h2>
+        <ol>
+            <li id="citation-1">
+                <div class="citation-label">Coinbase - News Article</div>
+                <a class="citation-link" href="https://www.coinbase.com/learn/crypto-glossary/what-is-decentralized-science-desci-and-how-does-it-plan-to-fix-academic-research">What is decentralized science (Desci) and how does it plan to fix academic research?</a>
+            </li>
+            <li id="citation-2">
+                <div class="citation-label">Ulam Labs - Blog</div>
+                <a class="citation-link" href="https://www.ulam.io/blog/how-decentralized-science-is-revolutionizing-research">How Decentralized Science (DeSci) Improves Research - Ulam Labs</a>
+            </li>
+            <li id="citation-3">
+                <div class="citation-label">Bitstamp - Educational Article</div>
+                <a class="citation-link" href="https://www.bitstamp.net/learn/blockchain/what-is-decentralized-science-desci-the-future-of-scientific-research-on-the-blockchain/">What Is Decentralized Science (DeSci)? The Future of Scientific...</a>
+            </li>
+            <li id="citation-4">
+                <div class="citation-label">CoinGecko - Educational Article</div>
+                <a class="citation-link" href="https://www.coingecko.com/learn/what-is-desci-decentralized-science">What Is Decentralized Science (DeSci) and How Can It Change the Scientific Field?</a>
+            </li>
+            <li id="citation-5">
+                <div class="citation-label">Zeeve - Blog</div>
+                <a class="citation-link" href="https://www.zeeve.io/blog/how-decentralized-sciencedesci-cures-the-common-ails-of-academic-research/">How Decentralized Science(DeSci) Cures the Common Ails of...</a>
+            </li>
+            <li id="citation-6">
+                <div class="citation-label">TokenMinds - Blog</div>
+                <a class="citation-link" href="https://tokenminds.co/blog/knowledge-base/decentralized-science">Decentralized Science (DeSci): A Paradigm Shift in Scientific Exploration - TokenMinds</a>
+            </li>
+            <li id="citation-7">
+                <div class="citation-label">Frontiers - Journal Article</div>
+                <a class="citation-link" href="https://www.frontiersin.org/journals/aging/articles/10.3389/fragi.2024.1353272/full">Advancing longevity research through decentralized... - Frontiers</a>
+            </li>
+            <li id="citation-8">
+                <div class="citation-label">Gemini - Educational Article</div>
+                <a class="citation-link" href="https://www.gemini.com/cryptopedia/dao-crypto-decentralized-governance-blockchain-governance">What Is a DAO's Role in Decentralized Governance? | Gemini</a>
+            </li>
+            <li id="citation-9">
+                <div class="citation-label">Hacken - Blog</div>
+                <a class="citation-link" href="https://hacken.io/discover/decentralized-science-desci/">What Is Decentralized Science (DeSci)? - Hacken</a>
+            </li>
+            <li id="citation-10">
+                <div class="citation-label">Frontiers - Journal Article</div>
+                <a class="citation-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a>
+            </li>
+            <li id="citation-11">
+                <div class="citation-label">arXiv - Preprint</div>
+                <a class="citation-link" href="https://arxiv.org/html/2409.01823v1">DAOs of Collective Intelligence? Unraveling the Complexity of Blockchain Governance in Decentralized Autonomous Organizations - arXiv</a>
+            </li>
+            <li id="citation-12">
+                <div class="citation-label">SciELO - Journal Article</div>
+                <a class="citation-link" href="https://www.scielo.br/j/bar/a/nqdm7FjmhVTyg9bV4WPJLcC/?format=pdf&lang=en">Decentralized Autonomous Organizations (DAOs): Field of Research and Avenues for Future Studies - SciELO</a>
+            </li>
+            <li id="citation-13">
+                <div class="citation-label">Blockchain App Factory - Solutions</div>
+                <a class="citation-link" href="https://www.blockchainappfactory.com/desci-solutions">Decentralized Science(DeSci) Solutions | Launch Your DeSci Startup</a>
+            </li>
+            <li id="citation-14">
+                <div class="citation-label">CCN - Educational Article</div>
+                <a class="citation-link" href="https://www.ccn.com/education/crypto/decentralized-science-desci-explained/">Decentralized Science (DeSci): Research Revolution & Blockchain - CCN.com</a>
+            </li>
+            <li id="citation-15">
+                <div class="citation-label">Blaize Tech - Blog</div>
+                <a class="citation-link" href="https://blaize.tech/blog/what-is-desci/">What is DeSci: The Revolution of Decentralized Science - Blaize Tech</a>
+            </li>
+            <li id="citation-16">
+                <div class="citation-label">Binance Square - Post</div>
+                <a class="citation-link" href="https://www.binance.com/en/square/post/17462558900577">DeSci: Revolutionizing Science Through Blockchain | BlockchainBaller on Binance Square</a>
+            </li>
+            <li id="citation-17">
+                <div class="citation-label">The Coin Bureau - Analysis</div>
+                <a class="citation-link" href="https://coinbureau.com/analysis/top-desci-projects/">Top DeSci Projects Revolutionizing Scientific Research in 2025 - The Coin Bureau</a>
+            </li>
+            <li id="citation-18">
+                <div class="citation-label">ResearchHub Foundation - Blog</div>
+                <a class="citation-link" href="https://blog.researchhub.foundation/the-4-steps-to-get-your-research-funded-by-a-desci-dao-a-step-by-step-guide/">How to Get Your Research Funded by A DeSci DAO: A Step-by-Step Guide.</a>
+            </li>
+            <li id="citation-19">
+                <div class="citation-label">Frontiers - Journal Article</div>
+                <a class="citation-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a>
+            </li>
         </ol>
-        </div>
+    </div>
+    <div class="supplementary">
+        <h2>Supplementary References</h2>
+        <ol start="20">
+            <li>
+                <div class="supplementary-label">ScienceDirect - Journal Article</div>
+                <a class="supplementary-link" href="https://www.sciencedirect.com/science/article/abs/pii/S096386872300133X">A decentralized autonomous organization (DAO) based framework for biomedical research and innovation</a>
+                <div class="supplementary-label">Cited By:</div>
+                <ul>
+                    <li><a class="supplementary-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1513885/full">Adapting Mintzberg's organizational theory to DeSci: the... - Frontiers</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="supplementary-label">Zenodo - Preprint</div>
+                <a class="supplementary-link" href="https://zenodo.org/records/10799462">Decentralized Science (DeSci) Movement: transforming science by making knowledge a public good through blockchain.</a>
+                <div class="supplementary-label">Cited By:</div>
+                <ul>
+                    <li><a class="supplementary-link" href="https://www.frontiersin.org/journals/blockchain/articles/10.3389/fbloc.2024.1375763/full">Decentralized science (DeSci): definition, shared values... - Frontiers</a></li>
+                </ul>
+            </li>
+        </ol>
+    </div>
         </div>
         
         <div id="Maxx" class="tabcontent maxxdao-section">
@@ -584,3 +739,4 @@
     </div>
 </body>
 </html>
+    
