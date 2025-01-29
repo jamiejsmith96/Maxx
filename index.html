@@ -429,7 +429,10 @@
         <div class="tab">
             <button id="DeSciTab" class="tablinks active" onclick="openTab(event, 'DeSci')">DeSci DAO Research</button>
             <button id="MaxxTab" class="tablinks" onclick="openTab(event, 'Maxx')">MaxxDAO Overview</button>
-            <button id="IdeasTab" class="tablinks" onclick="openTab(event, 'Ideas')">Ideas</button>
+            <button id="IdeasTab" class="tablinks" onclick="openTab(event, 'Ideas')">Product/Drug Candidate Ideas</button>
+            <button id="DraftTab" class="tablinks" onclick="openTab(event, 'Draft')">Whitepaper Draft</button>
+            <button id="FinancialTab" class="tablinks" onclick="openTab(event, 'Financial')">Financial Planning Draft</button>
+            <button id="PotentialTab" class="tablinks" onclick="openTab(event, 'Potential')">Potential Founding/Core Members</button>
         </div>
 
         <div id="DeSci" class="tabcontent" style="display: block;">
@@ -565,7 +568,7 @@
             </ul>
             <h2>Conclusion</h2>
             <p>DeSci DAOs offer a promising new way to organize and fund scientific research. By leveraging blockchain technology, they can foster transparency, collaboration, and accessibility in science. While challenges remain, the potential benefits of DeSci DAOs are significant, and we can expect to see continued innovation and development in this field.</p>
-            <p>When designing my own DeSci DAO, it is crucial to consider the technical aspects discussed in this article, including the choice of blockchain technology, governance mechanisms, and tokenomics model. For example, the scalability issues associated with Ethereum may lead me to consider alternative platforms like Polygon or Arweave. Additionally, the governance challenges highlighted in the research emphasize the need for a carefully designed governance model that balances the interests of diverse stakeholders and ensures accountability. The insights on IP-NFTs and tokenized incentive systems will also inform the design of my DAO's tokenomics model to incentivize participation and ensure the sustainability of the organization. Addressing the challenges and limitations of DeSci DAOs will be essential for their long-term success and sustainability.</p>
+            <p>When designing our own DeSci DAO, it is crucial to consider the technical aspects discussed in this article, including the choice of blockchain technology, governance mechanisms, and tokenomics model. For example, the scalability issues associated with Ethereum may lead us to consider alternative platforms like Polygon or Arweave. Additionally, the governance challenges highlighted in the research emphasize the need for a carefully designed governance model that balances the interests of diverse stakeholders and ensures accountability. The insights on IP-NFTs and tokenized incentive systems will also inform the design of our DAO's tokenomics model to incentivize participation and ensure the sustainability of the organization. Addressing the challenges and limitations of DeSci DAOs will be essential for their long-term success and sustainability.</p>
             
             <div class="citation">
                 <h2>Works Cited</h2>
@@ -755,11 +758,11 @@
             <p>MaxxDAO is strategically positioned to become a leader in decentralized aesthetic optimization, bridging the gap between scientific research and practical applications. By combining a strong scientific foundation with cutting-edge Web3 technologies and a vibrant community, MaxxDAO will unlock aesthetic excellence and maximize human potential.</p>
         </div>
         <div id="Ideas" class="tabcontent">
-            <h2>Drug Candidate Ideas</h2>
+            <h2>Product/Drug Candidate Ideas</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Drug Candidate</th>
+                        <th>Candidate</th>
                         <th>Indication</th>
                         <th>Links/References</th>
                         <th>Notes</th>
@@ -797,29 +800,86 @@
             </table>
         </div>
 
+        <div id="Draft" class="tabcontent">
+            <h2>Draft Whitepaper</h2>
+            <p>To be added soon.</p>
+        </div>
+        
+        <div id="Financial" class="tabcontent">
+            <h2>Financial Planning</h2>
+            <p>To be added soon.</p>
+        </div>
+        
+        <div id="Potential" class="tabcontent">
+            <h2>Community-based Founding Group</h2>
+            <p>A community-centric approach is core to our success. Empowering a community-driven founding group, in contrast to a privately organized or founder-led model, offers these key advantages:</p>
+            <ul>
+                <li><strong>Diverse Expertise:</strong> Our community's diverse talent pool brings a breadth of skills, knowledge, and perspectives, ensuring robust, innovative solutions and high-quality research and development.</li>
+                <li><strong>Transparency and Trust:</strong> Open participation and community involvement are paramount, fostering a transparent environment that builds trust among all stakeholders and informs our operations and decision-making.</li>
+                <li><strong>Community Alignment:</strong> This approach ensures the project remains deeply aligned with user needs, driving engagement, encouraging adoption, and cultivating a vibrant, invested community.</li>
+                <li><strong>Resilience and Adaptability:</strong> Distributing leadership and decision-making throughout the community creates a more resilient and adaptable organization, less susceptible to single points of failure or concentrated authority.</li>
+                <li><strong>Accelerated Innovation:</strong> Harnessing our members' collective intelligence fosters a culture of accelerated innovation, enabling us to generate creative ideas and breakthrough discoveries.</li>
+                <li><strong>Inclusivity:</strong> Our community-driven foundation provides a platform for diverse voices and perspectives, creating a project that truly serves the needs of a broad user base.</li>
+                <li><strong>Enhanced Capacity and Efficiency:</strong> Leveraging the community's collective power allows for efficient task distribution, promoting sustainability and maximizing productivity while reducing reliance on external resources.</li>
+                <li><strong>Robust Decision-Making:</strong> Exposure to a wide spectrum of perspectives mitigates the risk of echo chambers, fostering robust, well-rounded decision-making, even with initial disagreements.</li>
+            </ul>
+            <p>These advantages are fundamental to our vision and integrated into our operational framework. We are dedicated to leveraging these strengths to build a thriving and impactful DeSci DAO, setting new standards for community-driven innovation.</p>
+            <h2>Potential Founding/Core Members</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username/Person</th>
+                        <th>Contribution</th>
+                        <th>Role</th>
+                        <th>Interest</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>User1</td>
+                        <td>Technical expertise, smart contract development</td>
+                        <td>Lead Developer</td>
+                        <td>High</td>
+                    </tr>
+                    <tr>
+                        <td>User2</td>
+                        <td>Scientific research, proposal writing</td>
+                        <td>Head of Research</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td>User3</td>
+                        <td>Community building, marketing</td>
+                        <td>Community Manager</td>
+                        <td>High</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <script>
-            function openTab(evt, tabName) {
-                var i, tabcontent, tablinks;
-        
-                // Get all elements with class="tabcontent" and hide them
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+                            function openTab(evt, tabName) {
+                    var i, tabcontent, tablinks;
+
+                    // Get all elements with class="tabcontent" and hide them
+                    tabcontent = document.getElementsByClassName("tabcontent");
+                    for (i = 0; i < tabcontent.length; i++) {
+                        tabcontent[i].style.display = "none";
+                    }
+
+                    // Get all elements with class="tablinks" and remove the class "active"
+                    tablinks = document.getElementsByClassName("tablinks");
+                    for (i = 0; i < tablinks.length; i++) {
+                        tablinks[i].className = tablinks[i].className.replace(" active", "");
+                    }
+
+                    // Show the current tab, and add an "active" class to the button that opened the tab
+                    document.getElementById(tabName).style.display = "block";
+                    evt.currentTarget.className += " active";
                 }
-        
-                // Get all elements with class="tablinks" and remove the class "active"
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
-                }
-        
-                // Show the current tab, and add an "active" class to the button that opened the tab
-                document.getElementById(tabName).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-        
-            // Get the element with id="DeSciTab" and click on it
-            document.getElementById("DeSciTab").click();
+
+                // Get the element with id="DeSciTab" and click on it
+                document.getElementById("DeSciTab").click();
         </script>
     </div>
 </body>
